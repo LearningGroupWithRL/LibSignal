@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vType id="ambulance" vClass="emergency" length="6.0" width="2.3" height="2.5" accel="3.0" decel="5.0" sigma="0.2" speedFactor="1.2" speedDev="0.05" color="1.0,1.0,1.0" />
+
+    <flow id="ambulance_bottom0A0" type="ambulance" from="bottom0A0" begin="0" end="4800" probability="0.0014" />
+    <flow id="ambulance_bottom1A1" type="ambulance" from="bottom1A1" begin="0" end="4800" probability="0.0013" />
+    <flow id="ambulance_bottom2A2" type="ambulance" from="bottom2A2" begin="0" end="4800" probability="0.0013" />
+    <flow id="ambulance_bottom3A3" type="ambulance" from="bottom3A3" begin="0" end="4800" probability="0.0013" />
+    <flow id="ambulance_left0A0" type="ambulance" from="left0A0" begin="0" end="4800" probability="0.0014" />
+    <flow id="ambulance_left1B0" type="ambulance" from="left1B0" begin="0" end="4800" probability="0.0013" />
+    <flow id="ambulance_left2C0" type="ambulance" from="left2C0" begin="0" end="4800" probability="0.0014" />
+    <flow id="ambulance_right0A3" type="ambulance" from="right0A3" begin="0" end="4800" probability="0.0013" />
+    <flow id="ambulance_right1B3" type="ambulance" from="right1B3" begin="0" end="4800" probability="0.0013" />
+    <flow id="ambulance_right2C3" type="ambulance" from="right2C3" begin="0" end="4800" probability="0.0013" />
+    <flow id="ambulance_top0C0" type="ambulance" from="top0C0" begin="0" end="4800" probability="0.0013" />
+    <flow id="ambulance_top1C1" type="ambulance" from="top1C1" begin="0" end="4800" probability="0.0013" />
+    <flow id="ambulance_top2C2" type="ambulance" from="top2C2" begin="0" end="4800" probability="0.0013" />
+    <flow id="ambulance_top3C3" type="ambulance" from="top3C3" begin="0" end="4800" probability="0.0013" />
+
+</routes>

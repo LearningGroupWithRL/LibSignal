@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+    <busStop id="stop_B0A0" lane="B0A0_1" startPos="210.0" endPos="230.0" name="station_B0A0" friendlyPos="true">
+        <access lane="B0A0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A1A0" lane="A1A0_1" startPos="210.0" endPos="230.0" name="station_A1A0" friendlyPos="true">
+        <access lane="A1A0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_bottom0A0" lane="bottom0A0_1" startPos="210.0" endPos="230.0" name="station_bottom0A0" friendlyPos="true">
+        <access lane="bottom0A0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_left0A0" lane="left0A0_1" startPos="210.0" endPos="230.0" name="station_left0A0" friendlyPos="true">
+        <access lane="left0A0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B1A1" lane="B1A1_1" startPos="210.0" endPos="230.0" name="station_B1A1" friendlyPos="true">
+        <access lane="B1A1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A2A1" lane="A2A1_1" startPos="210.0" endPos="230.0" name="station_A2A1" friendlyPos="true">
+        <access lane="A2A1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_bottom1A1" lane="bottom1A1_1" startPos="210.0" endPos="230.0" name="station_bottom1A1" friendlyPos="true">
+        <access lane="bottom1A1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A0A1" lane="A0A1_1" startPos="210.0" endPos="230.0" name="station_A0A1" friendlyPos="true">
+        <access lane="A0A1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B2A2" lane="B2A2_1" startPos="210.0" endPos="230.0" name="station_B2A2" friendlyPos="true">
+        <access lane="B2A2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A3A2" lane="A3A2_1" startPos="210.0" endPos="230.0" name="station_A3A2" friendlyPos="true">
+        <access lane="A3A2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_bottom2A2" lane="bottom2A2_1" startPos="210.0" endPos="230.0" name="station_bottom2A2" friendlyPos="true">
+        <access lane="bottom2A2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A1A2" lane="A1A2_1" startPos="210.0" endPos="230.0" name="station_A1A2" friendlyPos="true">
+        <access lane="A1A2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B3A3" lane="B3A3_1" startPos="210.0" endPos="230.0" name="station_B3A3" friendlyPos="true">
+        <access lane="B3A3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_right0A3" lane="right0A3_1" startPos="210.0" endPos="230.0" name="station_right0A3" friendlyPos="true">
+        <access lane="right0A3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_bottom3A3" lane="bottom3A3_1" startPos="210.0" endPos="230.0" name="station_bottom3A3" friendlyPos="true">
+        <access lane="bottom3A3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A2A3" lane="A2A3_1" startPos="210.0" endPos="230.0" name="station_A2A3" friendlyPos="true">
+        <access lane="A2A3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C0B0" lane="C0B0_1" startPos="210.0" endPos="230.0" name="station_C0B0" friendlyPos="true">
+        <access lane="C0B0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B1B0" lane="B1B0_1" startPos="210.0" endPos="230.0" name="station_B1B0" friendlyPos="true">
+        <access lane="B1B0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A0B0" lane="A0B0_1" startPos="210.0" endPos="230.0" name="station_A0B0" friendlyPos="true">
+        <access lane="A0B0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_left1B0" lane="left1B0_1" startPos="210.0" endPos="230.0" name="station_left1B0" friendlyPos="true">
+        <access lane="left1B0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C1B1" lane="C1B1_1" startPos="210.0" endPos="230.0" name="station_C1B1" friendlyPos="true">
+        <access lane="C1B1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B2B1" lane="B2B1_1" startPos="210.0" endPos="230.0" name="station_B2B1" friendlyPos="true">
+        <access lane="B2B1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A1B1" lane="A1B1_1" startPos="210.0" endPos="230.0" name="station_A1B1" friendlyPos="true">
+        <access lane="A1B1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B0B1" lane="B0B1_1" startPos="210.0" endPos="230.0" name="station_B0B1" friendlyPos="true">
+        <access lane="B0B1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C2B2" lane="C2B2_1" startPos="210.0" endPos="230.0" name="station_C2B2" friendlyPos="true">
+        <access lane="C2B2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B3B2" lane="B3B2_1" startPos="210.0" endPos="230.0" name="station_B3B2" friendlyPos="true">
+        <access lane="B3B2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A2B2" lane="A2B2_1" startPos="210.0" endPos="230.0" name="station_A2B2" friendlyPos="true">
+        <access lane="A2B2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B1B2" lane="B1B2_1" startPos="210.0" endPos="230.0" name="station_B1B2" friendlyPos="true">
+        <access lane="B1B2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C3B3" lane="C3B3_1" startPos="210.0" endPos="230.0" name="station_C3B3" friendlyPos="true">
+        <access lane="C3B3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_right1B3" lane="right1B3_1" startPos="210.0" endPos="230.0" name="station_right1B3" friendlyPos="true">
+        <access lane="right1B3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A3B3" lane="A3B3_1" startPos="210.0" endPos="230.0" name="station_A3B3" friendlyPos="true">
+        <access lane="A3B3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B2B3" lane="B2B3_1" startPos="210.0" endPos="230.0" name="station_B2B3" friendlyPos="true">
+        <access lane="B2B3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_top0C0" lane="top0C0_1" startPos="210.0" endPos="230.0" name="station_top0C0" friendlyPos="true">
+        <access lane="top0C0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C1C0" lane="C1C0_1" startPos="210.0" endPos="230.0" name="station_C1C0" friendlyPos="true">
+        <access lane="C1C0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B0C0" lane="B0C0_1" startPos="210.0" endPos="230.0" name="station_B0C0" friendlyPos="true">
+        <access lane="B0C0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_left2C0" lane="left2C0_1" startPos="210.0" endPos="230.0" name="station_left2C0" friendlyPos="true">
+        <access lane="left2C0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_top1C1" lane="top1C1_1" startPos="210.0" endPos="230.0" name="station_top1C1" friendlyPos="true">
+        <access lane="top1C1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C2C1" lane="C2C1_1" startPos="210.0" endPos="230.0" name="station_C2C1" friendlyPos="true">
+        <access lane="C2C1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B1C1" lane="B1C1_1" startPos="210.0" endPos="230.0" name="station_B1C1" friendlyPos="true">
+        <access lane="B1C1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C0C1" lane="C0C1_1" startPos="210.0" endPos="230.0" name="station_C0C1" friendlyPos="true">
+        <access lane="C0C1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_top2C2" lane="top2C2_1" startPos="210.0" endPos="230.0" name="station_top2C2" friendlyPos="true">
+        <access lane="top2C2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C3C2" lane="C3C2_1" startPos="210.0" endPos="230.0" name="station_C3C2" friendlyPos="true">
+        <access lane="C3C2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B2C2" lane="B2C2_1" startPos="210.0" endPos="230.0" name="station_B2C2" friendlyPos="true">
+        <access lane="B2C2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C1C2" lane="C1C2_1" startPos="210.0" endPos="230.0" name="station_C1C2" friendlyPos="true">
+        <access lane="C1C2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_top3C3" lane="top3C3_1" startPos="210.0" endPos="230.0" name="station_top3C3" friendlyPos="true">
+        <access lane="top3C3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_right2C3" lane="right2C3_1" startPos="210.0" endPos="230.0" name="station_right2C3" friendlyPos="true">
+        <access lane="right2C3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B3C3" lane="B3C3_1" startPos="210.0" endPos="230.0" name="station_B3C3" friendlyPos="true">
+        <access lane="B3C3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C2C3" lane="C2C3_1" startPos="210.0" endPos="230.0" name="station_C2C3" friendlyPos="true">
+        <access lane="C2C3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A0bottom0" lane="A0bottom0_1" startPos="210.0" endPos="230.0" name="station_A0bottom0" friendlyPos="true">
+        <access lane="A0bottom0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A0left0" lane="A0left0_1" startPos="210.0" endPos="230.0" name="station_A0left0" friendlyPos="true">
+        <access lane="A0left0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A1bottom1" lane="A1bottom1_1" startPos="210.0" endPos="230.0" name="station_A1bottom1" friendlyPos="true">
+        <access lane="A1bottom1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A2bottom2" lane="A2bottom2_1" startPos="210.0" endPos="230.0" name="station_A2bottom2" friendlyPos="true">
+        <access lane="A2bottom2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A3bottom3" lane="A3bottom3_1" startPos="210.0" endPos="230.0" name="station_A3bottom3" friendlyPos="true">
+        <access lane="A3bottom3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_A3right0" lane="A3right0_1" startPos="210.0" endPos="230.0" name="station_A3right0" friendlyPos="true">
+        <access lane="A3right0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B0left1" lane="B0left1_1" startPos="210.0" endPos="230.0" name="station_B0left1" friendlyPos="true">
+        <access lane="B0left1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_B3right1" lane="B3right1_1" startPos="210.0" endPos="230.0" name="station_B3right1" friendlyPos="true">
+        <access lane="B3right1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C0top0" lane="C0top0_1" startPos="210.0" endPos="230.0" name="station_C0top0" friendlyPos="true">
+        <access lane="C0top0_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C0left2" lane="C0left2_1" startPos="210.0" endPos="230.0" name="station_C0left2" friendlyPos="true">
+        <access lane="C0left2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C1top1" lane="C1top1_1" startPos="210.0" endPos="230.0" name="station_C1top1" friendlyPos="true">
+        <access lane="C1top1_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C2top2" lane="C2top2_1" startPos="210.0" endPos="230.0" name="station_C2top2" friendlyPos="true">
+        <access lane="C2top2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C3top3" lane="C3top3_1" startPos="210.0" endPos="230.0" name="station_C3top3" friendlyPos="true">
+        <access lane="C3top3_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+    <busStop id="stop_C3right2" lane="C3right2_1" startPos="210.0" endPos="230.0" name="station_C3right2" friendlyPos="true">
+        <access lane="C3right2_0" pos="220.0" length="3.0" friendlyPos="true"/>
+    </busStop>
+
+</additional>

@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="bus" vClass="bus" accel="1.2" decel="4.0" sigma="0.5" length="12.0" width="2.5" minGap="3.0" maxSpeed="20" speedFactor="0.9" speedDev="0.05" personCapacity="60" color="0.0,0.0,1.0" />
+    <!-- Peak hour bus flows - single frequency per route -->
+    <route id="line10_circ" edges="right1B3 B3C3 C3C2 C2C1 C1C0 C0B0 B0A0 A0A1 A1A2 A2A3 A3B3 B3right1" color="0.0,0.0,1.0" />
+    <flow id="line10_circ" type="bus" route="line10_circ" begin="0" end="4800" period="600" line="Line10" color="0.0,0.0,1.0">
+        <stop busStop="stop_right1B3" duration="20" />
+        <stop busStop="stop_B3C3" duration="20" />
+        <stop busStop="stop_C3C2" duration="20" />
+        <stop busStop="stop_C2C1" duration="20" />
+        <stop busStop="stop_C1C0" duration="20" />
+        <stop busStop="stop_C0B0" duration="20" />
+        <stop busStop="stop_B0A0" duration="20" />
+        <stop busStop="stop_A0A1" duration="20" />
+        <stop busStop="stop_A1A2" duration="20" />
+        <stop busStop="stop_A2A3" duration="20" />
+        <stop busStop="stop_A3B3" duration="20" />
+        <stop busStop="stop_B3right1" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line1_fwd" edges="bottom0A0 A0B0 B0B1 B1C1 C1C2 C2B2 B2B3 B3A3 A3bottom3" color="0.0,0.0,1.0" />
+    <flow id="line1_fwd" type="bus" route="line1_fwd" begin="0" end="4800" period="240" line="Line1-fwd" color="0.0,0.0,1.0">
+        <stop busStop="stop_bottom0A0" duration="20" />
+        <stop busStop="stop_A0B0" duration="20" />
+        <stop busStop="stop_B0B1" duration="20" />
+        <stop busStop="stop_B1C1" duration="20" />
+        <stop busStop="stop_C1C2" duration="20" />
+        <stop busStop="stop_C2B2" duration="20" />
+        <stop busStop="stop_B2B3" duration="20" />
+        <stop busStop="stop_B3A3" duration="20" />
+        <stop busStop="stop_A3bottom3" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line1_rev" edges="bottom3A3 A3B3 B3B2 B2C2 C2C1 C1B1 B1B0 B0A0 A0bottom0" color="0.0,0.0,1.0" />
+    <flow id="line1_rev" type="bus" route="line1_rev" begin="0" end="4800" period="240" line="Line1-rev" color="0.0,0.0,1.0">
+        <stop busStop="stop_bottom3A3" duration="20" />
+        <stop busStop="stop_A3B3" duration="20" />
+        <stop busStop="stop_B3B2" duration="20" />
+        <stop busStop="stop_B2C2" duration="20" />
+        <stop busStop="stop_C2C1" duration="20" />
+        <stop busStop="stop_C1B1" duration="20" />
+        <stop busStop="stop_B1B0" duration="20" />
+        <stop busStop="stop_B0A0" duration="20" />
+        <stop busStop="stop_A0bottom0" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line2_fwd" edges="bottom0A0 A0A1 A1B1 B1B0 B0C0 C0C1 C1C2 C2C3 C3B3 B3B2 B2A2 A2A3 A3bottom3" color="0.0,0.0,1.0" />
+    <flow id="line2_fwd" type="bus" route="line2_fwd" begin="0" end="4800" period="360" line="Line2-fwd" color="0.0,0.0,1.0">
+        <stop busStop="stop_bottom0A0" duration="20" />
+        <stop busStop="stop_A0A1" duration="20" />
+        <stop busStop="stop_A1B1" duration="20" />
+        <stop busStop="stop_B1B0" duration="20" />
+        <stop busStop="stop_B0C0" duration="20" />
+        <stop busStop="stop_C0C1" duration="20" />
+        <stop busStop="stop_C1C2" duration="20" />
+        <stop busStop="stop_C2C3" duration="20" />
+        <stop busStop="stop_C3B3" duration="20" />
+        <stop busStop="stop_B3B2" duration="20" />
+        <stop busStop="stop_B2A2" duration="20" />
+        <stop busStop="stop_A2A3" duration="20" />
+        <stop busStop="stop_A3bottom3" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line2_rev" edges="bottom3A3 A3A2 A2B2 B2B3 B3C3 C3C2 C2C1 C1C0 C0B0 B0B1 B1A1 A1A0 A0bottom0" color="0.0,0.0,1.0" />
+    <flow id="line2_rev" type="bus" route="line2_rev" begin="0" end="4800" period="360" line="Line2-rev" color="0.0,0.0,1.0">
+        <stop busStop="stop_bottom3A3" duration="20" />
+        <stop busStop="stop_A3A2" duration="20" />
+        <stop busStop="stop_A2B2" duration="20" />
+        <stop busStop="stop_B2B3" duration="20" />
+        <stop busStop="stop_B3C3" duration="20" />
+        <stop busStop="stop_C3C2" duration="20" />
+        <stop busStop="stop_C2C1" duration="20" />
+        <stop busStop="stop_C1C0" duration="20" />
+        <stop busStop="stop_C0B0" duration="20" />
+        <stop busStop="stop_B0B1" duration="20" />
+        <stop busStop="stop_B1A1" duration="20" />
+        <stop busStop="stop_A1A0" duration="20" />
+        <stop busStop="stop_A0bottom0" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line3_fwd" edges="top0C0 C0B0 B0B1 B1A1 A1A2 A2B2 B2B3 B3C3 C3top3" color="0.0,0.0,1.0" />
+    <flow id="line3_fwd" type="bus" route="line3_fwd" begin="0" end="4800" period="240" line="Line3-fwd" color="0.0,0.0,1.0">
+        <stop busStop="stop_top0C0" duration="20" />
+        <stop busStop="stop_C0B0" duration="20" />
+        <stop busStop="stop_B0B1" duration="20" />
+        <stop busStop="stop_B1A1" duration="20" />
+        <stop busStop="stop_A1A2" duration="20" />
+        <stop busStop="stop_A2B2" duration="20" />
+        <stop busStop="stop_B2B3" duration="20" />
+        <stop busStop="stop_B3C3" duration="20" />
+        <stop busStop="stop_C3top3" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line3_rev" edges="top3C3 C3B3 B3B2 B2A2 A2A1 A1B1 B1B0 B0C0 C0top0" color="0.0,0.0,1.0" />
+    <flow id="line3_rev" type="bus" route="line3_rev" begin="0" end="4800" period="240" line="Line3-rev" color="0.0,0.0,1.0">
+        <stop busStop="stop_top3C3" duration="20" />
+        <stop busStop="stop_C3B3" duration="20" />
+        <stop busStop="stop_B3B2" duration="20" />
+        <stop busStop="stop_B2A2" duration="20" />
+        <stop busStop="stop_A2A1" duration="20" />
+        <stop busStop="stop_A1B1" duration="20" />
+        <stop busStop="stop_B1B0" duration="20" />
+        <stop busStop="stop_B0C0" duration="20" />
+        <stop busStop="stop_C0top0" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line4_fwd" edges="top0C0 C0C1 C1B1 B1B0 B0A0 A0A1 A1A2 A2A3 A3B3 B3B2 B2C2 C2C3 C3top3" color="0.0,0.0,1.0" />
+    <flow id="line4_fwd" type="bus" route="line4_fwd" begin="0" end="4800" period="360" line="Line4-fwd" color="0.0,0.0,1.0">
+        <stop busStop="stop_top0C0" duration="20" />
+        <stop busStop="stop_C0C1" duration="20" />
+        <stop busStop="stop_C1B1" duration="20" />
+        <stop busStop="stop_B1B0" duration="20" />
+        <stop busStop="stop_B0A0" duration="20" />
+        <stop busStop="stop_A0A1" duration="20" />
+        <stop busStop="stop_A1A2" duration="20" />
+        <stop busStop="stop_A2A3" duration="20" />
+        <stop busStop="stop_A3B3" duration="20" />
+        <stop busStop="stop_B3B2" duration="20" />
+        <stop busStop="stop_B2C2" duration="20" />
+        <stop busStop="stop_C2C3" duration="20" />
+        <stop busStop="stop_C3top3" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line4_rev" edges="top3C3 C3C2 C2B2 B2B3 B3A3 A3A2 A2A1 A1A0 A0B0 B0B1 B1C1 C1C0 C0top0" color="0.0,0.0,1.0" />
+    <flow id="line4_rev" type="bus" route="line4_rev" begin="0" end="4800" period="360" line="Line4-rev" color="0.0,0.0,1.0">
+        <stop busStop="stop_top3C3" duration="20" />
+        <stop busStop="stop_C3C2" duration="20" />
+        <stop busStop="stop_C2B2" duration="20" />
+        <stop busStop="stop_B2B3" duration="20" />
+        <stop busStop="stop_B3A3" duration="20" />
+        <stop busStop="stop_A3A2" duration="20" />
+        <stop busStop="stop_A2A1" duration="20" />
+        <stop busStop="stop_A1A0" duration="20" />
+        <stop busStop="stop_A0B0" duration="20" />
+        <stop busStop="stop_B0B1" duration="20" />
+        <stop busStop="stop_B1C1" duration="20" />
+        <stop busStop="stop_C1C0" duration="20" />
+        <stop busStop="stop_C0top0" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line5_fwd" edges="left0A0 A0A1 A1A2 A2A3 A3B3 B3B2 B2B1 B1B0 B0C0 C0C1 C1C2 C2C3 C3right2" color="0.0,0.0,1.0" />
+    <flow id="line5_fwd" type="bus" route="line5_fwd" begin="0" end="4800" period="240" line="Line5-fwd" color="0.0,0.0,1.0">
+        <stop busStop="stop_left0A0" duration="20" />
+        <stop busStop="stop_A0A1" duration="20" />
+        <stop busStop="stop_A1A2" duration="20" />
+        <stop busStop="stop_A2A3" duration="20" />
+        <stop busStop="stop_A3B3" duration="20" />
+        <stop busStop="stop_B3B2" duration="20" />
+        <stop busStop="stop_B2B1" duration="20" />
+        <stop busStop="stop_B1B0" duration="20" />
+        <stop busStop="stop_B0C0" duration="20" />
+        <stop busStop="stop_C0C1" duration="20" />
+        <stop busStop="stop_C1C2" duration="20" />
+        <stop busStop="stop_C2C3" duration="20" />
+        <stop busStop="stop_C3right2" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line5_rev" edges="right2C3 C3C2 C2C1 C1C0 C0B0 B0B1 B1B2 B2B3 B3A3 A3A2 A2A1 A1A0 A0left0" color="0.0,0.0,1.0" />
+    <flow id="line5_rev" type="bus" route="line5_rev" begin="0" end="4800" period="240" line="Line5-rev" color="0.0,0.0,1.0">
+        <stop busStop="stop_right2C3" duration="20" />
+        <stop busStop="stop_C3C2" duration="20" />
+        <stop busStop="stop_C2C1" duration="20" />
+        <stop busStop="stop_C1C0" duration="20" />
+        <stop busStop="stop_C0B0" duration="20" />
+        <stop busStop="stop_B0B1" duration="20" />
+        <stop busStop="stop_B1B2" duration="20" />
+        <stop busStop="stop_B2B3" duration="20" />
+        <stop busStop="stop_B3A3" duration="20" />
+        <stop busStop="stop_A3A2" duration="20" />
+        <stop busStop="stop_A2A1" duration="20" />
+        <stop busStop="stop_A1A0" duration="20" />
+        <stop busStop="stop_A0left0" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line6_fwd" edges="left2C0 C0C1 C1C2 C2C3 C3B3 B3B2 B2B1 B1B0 B0A0 A0A1 A1A2 A2A3 A3right0" color="0.0,0.0,1.0" />
+    <flow id="line6_fwd" type="bus" route="line6_fwd" begin="0" end="4800" period="360" line="Line6-fwd" color="0.0,0.0,1.0">
+        <stop busStop="stop_left2C0" duration="20" />
+        <stop busStop="stop_C0C1" duration="20" />
+        <stop busStop="stop_C1C2" duration="20" />
+        <stop busStop="stop_C2C3" duration="20" />
+        <stop busStop="stop_C3B3" duration="20" />
+        <stop busStop="stop_B3B2" duration="20" />
+        <stop busStop="stop_B2B1" duration="20" />
+        <stop busStop="stop_B1B0" duration="20" />
+        <stop busStop="stop_B0A0" duration="20" />
+        <stop busStop="stop_A0A1" duration="20" />
+        <stop busStop="stop_A1A2" duration="20" />
+        <stop busStop="stop_A2A3" duration="20" />
+        <stop busStop="stop_A3right0" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line6_rev" edges="right0A3 A3A2 A2A1 A1A0 A0B0 B0B1 B1B2 B2B3 B3C3 C3C2 C2C1 C1C0 C0left2" color="0.0,0.0,1.0" />
+    <flow id="line6_rev" type="bus" route="line6_rev" begin="0" end="4800" period="360" line="Line6-rev" color="0.0,0.0,1.0">
+        <stop busStop="stop_right0A3" duration="20" />
+        <stop busStop="stop_A3A2" duration="20" />
+        <stop busStop="stop_A2A1" duration="20" />
+        <stop busStop="stop_A1A0" duration="20" />
+        <stop busStop="stop_A0B0" duration="20" />
+        <stop busStop="stop_B0B1" duration="20" />
+        <stop busStop="stop_B1B2" duration="20" />
+        <stop busStop="stop_B2B3" duration="20" />
+        <stop busStop="stop_B3C3" duration="20" />
+        <stop busStop="stop_C3C2" duration="20" />
+        <stop busStop="stop_C2C1" duration="20" />
+        <stop busStop="stop_C1C0" duration="20" />
+        <stop busStop="stop_C0left2" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line7_fwd" edges="bottom1A1 A1A0 A0B0 B0C0 C0C1 C1C2 C2C3 C3B3 B3A3 A3A2 A2bottom2" color="0.0,0.0,1.0" />
+    <flow id="line7_fwd" type="bus" route="line7_fwd" begin="0" end="4800" period="240" line="Line7-fwd" color="0.0,0.0,1.0">
+        <stop busStop="stop_bottom1A1" duration="20" />
+        <stop busStop="stop_A1A0" duration="20" />
+        <stop busStop="stop_A0B0" duration="20" />
+        <stop busStop="stop_B0C0" duration="20" />
+        <stop busStop="stop_C0C1" duration="20" />
+        <stop busStop="stop_C1C2" duration="20" />
+        <stop busStop="stop_C2C3" duration="20" />
+        <stop busStop="stop_C3B3" duration="20" />
+        <stop busStop="stop_B3A3" duration="20" />
+        <stop busStop="stop_A3A2" duration="20" />
+        <stop busStop="stop_A2bottom2" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line7_rev" edges="bottom2A2 A2A3 A3B3 B3C3 C3C2 C2C1 C1C0 C0B0 B0A0 A0A1 A1bottom1" color="0.0,0.0,1.0" />
+    <flow id="line7_rev" type="bus" route="line7_rev" begin="0" end="4800" period="240" line="Line7-rev" color="0.0,0.0,1.0">
+        <stop busStop="stop_bottom2A2" duration="20" />
+        <stop busStop="stop_A2A3" duration="20" />
+        <stop busStop="stop_A3B3" duration="20" />
+        <stop busStop="stop_B3C3" duration="20" />
+        <stop busStop="stop_C3C2" duration="20" />
+        <stop busStop="stop_C2C1" duration="20" />
+        <stop busStop="stop_C1C0" duration="20" />
+        <stop busStop="stop_C0B0" duration="20" />
+        <stop busStop="stop_B0A0" duration="20" />
+        <stop busStop="stop_A0A1" duration="20" />
+        <stop busStop="stop_A1bottom1" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line8_fwd" edges="top1C1 C1C0 C0B0 B0A0 A0A1 A1A2 A2A3 A3B3 B3C3 C3C2 C2top2" color="0.0,0.0,1.0" />
+    <flow id="line8_fwd" type="bus" route="line8_fwd" begin="0" end="4800" period="360" line="Line8-fwd" color="0.0,0.0,1.0">
+        <stop busStop="stop_top1C1" duration="20" />
+        <stop busStop="stop_C1C0" duration="20" />
+        <stop busStop="stop_C0B0" duration="20" />
+        <stop busStop="stop_B0A0" duration="20" />
+        <stop busStop="stop_A0A1" duration="20" />
+        <stop busStop="stop_A1A2" duration="20" />
+        <stop busStop="stop_A2A3" duration="20" />
+        <stop busStop="stop_A3B3" duration="20" />
+        <stop busStop="stop_B3C3" duration="20" />
+        <stop busStop="stop_C3C2" duration="20" />
+        <stop busStop="stop_C2top2" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line8_rev" edges="top2C2 C2C3 C3B3 B3A3 A3A2 A2A1 A1A0 A0B0 B0C0 C0C1 C1top1" color="0.0,0.0,1.0" />
+    <flow id="line8_rev" type="bus" route="line8_rev" begin="0" end="4800" period="360" line="Line8-rev" color="0.0,0.0,1.0">
+        <stop busStop="stop_top2C2" duration="20" />
+        <stop busStop="stop_C2C3" duration="20" />
+        <stop busStop="stop_C3B3" duration="20" />
+        <stop busStop="stop_B3A3" duration="20" />
+        <stop busStop="stop_A3A2" duration="20" />
+        <stop busStop="stop_A2A1" duration="20" />
+        <stop busStop="stop_A1A0" duration="20" />
+        <stop busStop="stop_A0B0" duration="20" />
+        <stop busStop="stop_B0C0" duration="20" />
+        <stop busStop="stop_C0C1" duration="20" />
+        <stop busStop="stop_C1top1" duration="20" />
+    </flow>
+    <!-- -->
+    <route id="line9_circ" edges="left1B0 B0A0 A0A1 A1A2 A2A3 A3B3 B3C3 C3C2 C2C1 C1C0 C0B0 B0left1" color="0.0,0.0,1.0" />
+    <flow id="line9_circ" type="bus" route="line9_circ" begin="0" end="4800" period="600" line="Line9" color="0.0,0.0,1.0">
+        <stop busStop="stop_left1B0" duration="20" />
+        <stop busStop="stop_B0A0" duration="20" />
+        <stop busStop="stop_A0A1" duration="20" />
+        <stop busStop="stop_A1A2" duration="20" />
+        <stop busStop="stop_A2A3" duration="20" />
+        <stop busStop="stop_A3B3" duration="20" />
+        <stop busStop="stop_B3C3" duration="20" />
+        <stop busStop="stop_C3C2" duration="20" />
+        <stop busStop="stop_C2C1" duration="20" />
+        <stop busStop="stop_C1C0" duration="20" />
+        <stop busStop="stop_C0B0" duration="20" />
+        <stop busStop="stop_B0left1" duration="20" />
+    </flow>
+    <!-- -->
+</routes>

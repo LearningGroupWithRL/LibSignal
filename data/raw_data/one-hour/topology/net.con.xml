@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connections>
+
+    <!-- ==================== INTERSECTION A0 ==================== -->
+
+    <!-- From edge B0A0 -->
+    <!-- Right turn -->
+    <connection from="B0A0" to="A0left0" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B0A0" to="A0bottom0" fromLane="2" toLane="2"/>
+    <connection from="B0A0" to="A0bottom0" fromLane="3" toLane="3"/>
+    <connection from="B0A0" to="A0bottom0" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="B0A0" to="A0A1" fromLane="4" toLane="2"/>
+    <connection from="B0A0" to="A0A1" fromLane="4" toLane="6"/>
+    <!-- U turn -->
+    <connection from="B0A0" to="A0B0" fromLane="4" toLane="3"/>
+
+    <!-- From edge A1A0 -->
+    <!-- Right turn -->
+    <connection from="A1A0" to="A0B0" fromLane="1" toLane="1"/>
+    <!-- Left turn -->
+    <connection from="A1A0" to="A0bottom0" fromLane="2" toLane="2"/>
+    <connection from="A1A0" to="A0bottom0" fromLane="3" toLane="4"/>
+    <!-- U turn -->
+    <connection from="A1A0" to="A0A1" fromLane="3" toLane="4"/>
+    <!-- Straight -->
+    <connection from="A1A0" to="A0left0" fromLane="4" toLane="2"/>
+    <connection from="A1A0" to="A0left0" fromLane="4" toLane="3"/>
+    <connection from="A1A0" to="A0left0" fromLane="5" toLane="4"/>
+    <connection from="A1A0" to="A0left0" fromLane="5" toLane="5"/>
+
+    <!-- From edge bottom0A0 -->
+    <!-- Right turn -->
+    <connection from="bottom0A0" to="A0A1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="bottom0A0" to="A0B0" fromLane="2" toLane="2"/>
+    <connection from="bottom0A0" to="A0B0" fromLane="3" toLane="3"/>
+    <connection from="bottom0A0" to="A0B0" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="bottom0A0" to="A0left0" fromLane="4" toLane="3"/>
+    <connection from="bottom0A0" to="A0left0" fromLane="5" toLane="5"/>
+    <!-- U turn -->
+    <connection from="bottom0A0" to="A0bottom0" fromLane="5" toLane="3"/>
+
+    <!-- From left0A0 -->
+    <!-- Right turn -->
+    <connection from="left0A0" to="A0bottom0" fromLane="1" toLane="1"/>
+    <!-- Left turn -->
+    <connection from="left0A0" to="A0B0" fromLane="2" toLane="2"/>
+    <connection from="left0A0" to="A0B0" fromLane="3" toLane="4"/>
+    <!-- U turn -->
+    <connection from="left0A0" to="A0left0" fromLane="3" toLane="4"/>
+    <!-- Straight -->
+    <connection from="left0A0" to="A0A1" fromLane="4" toLane="3"/>
+    <connection from="left0A0" to="A0A1" fromLane="4" toLane="4"/>
+    <connection from="left0A0" to="A0A1" fromLane="5" toLane="5"/>
+    <connection from="left0A0" to="A0A1" fromLane="5" toLane="6"/>
+
+    <!-- ==================== INTERSECTION A1 ==================== -->
+
+    <!-- From edge B1A1 -->
+    <!-- Right turn -->
+    <connection from="B1A1" to="A1A0" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B1A1" to="A1bottom1" fromLane="2" toLane="2"/>
+    <connection from="B1A1" to="A1bottom1" fromLane="3" toLane="3"/>
+    <connection from="B1A1" to="A1bottom1" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="B1A1" to="A1A2" fromLane="4" toLane="3"/>
+    <connection from="B1A1" to="A1A2" fromLane="4" toLane="6"/>
+    <!-- U turn -->
+    <connection from="B1A1" to="A1B1" fromLane="4" toLane="3"/>
+
+    <!-- From edge A2A1 -->
+    <!-- Right turn -->
+    <connection from="A2A1" to="A1B1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="A2A1" to="A1A0" fromLane="2" toLane="2"/>
+    <connection from="A2A1" to="A1A0" fromLane="2" toLane="3"/>
+    <connection from="A2A1" to="A1A0" fromLane="3" toLane="4"/>
+    <connection from="A2A1" to="A1A0" fromLane="3" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="A2A1" to="A1bottom1" fromLane="4" toLane="2"/>
+    <connection from="A2A1" to="A1bottom1" fromLane="5" toLane="4"/>
+    <!-- U turn -->
+    <connection from="A2A1" to="A1A2" fromLane="5" toLane="4"/>
+
+    <!-- From edge bottom1A1 -->
+    <!-- Right turn -->
+    <connection from="bottom1A1" to="A1A2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="bottom1A1" to="A1B1" fromLane="2" toLane="2"/>
+    <connection from="bottom1A1" to="A1B1" fromLane="3" toLane="3"/>
+    <connection from="bottom1A1" to="A1B1" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="bottom1A1" to="A1A0" fromLane="4" toLane="2"/>
+    <connection from="bottom1A1" to="A1A0" fromLane="4" toLane="5"/>
+    <!-- U turn -->
+    <connection from="bottom1A1" to="A1bottom1" fromLane="4" toLane="3"/>
+
+    <!-- From edge A0A1 -->
+    <!-- Right turn -->
+    <connection from="A0A1" to="A1bottom1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="A0A1" to="A1A2" fromLane="2" toLane="2"/>
+    <connection from="A0A1" to="A1A2" fromLane="3" toLane="3"/>
+    <connection from="A0A1" to="A1A2" fromLane="4" toLane="4"/>
+    <connection from="A0A1" to="A1A2" fromLane="4" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="A0A1" to="A1B1" fromLane="5" toLane="2"/>
+    <connection from="A0A1" to="A1B1" fromLane="6" toLane="4"/>
+    <!-- U turn -->
+    <connection from="A0A1" to="A1A0" fromLane="6" toLane="3"/>
+
+    <!-- ==================== INTERSECTION A2 ==================== -->
+
+    <!-- From edge B2A2 -->
+    <!-- Right turn -->
+    <connection from="B2A2" to="A2A1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B2A2" to="A2bottom2" fromLane="2" toLane="2"/>
+    <connection from="B2A2" to="A2bottom2" fromLane="3" toLane="3"/>
+    <connection from="B2A2" to="A2bottom2" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="B2A2" to="A2A3" fromLane="4" toLane="3"/>
+    <connection from="B2A2" to="A2A3" fromLane="4" toLane="6"/>
+    <!-- U turn -->
+    <connection from="B2A2" to="A2B2" fromLane="4" toLane="3"/>
+
+    <!-- From edge A3A2 -->
+    <!-- Right turn -->
+    <connection from="A3A2" to="A2B2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="A3A2" to="A2A1" fromLane="2" toLane="2"/>
+    <connection from="A3A2" to="A2A1" fromLane="2" toLane="3"/>
+    <connection from="A3A2" to="A2A1" fromLane="3" toLane="4"/>
+    <connection from="A3A2" to="A2A1" fromLane="3" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="A3A2" to="A2bottom2" fromLane="4" toLane="2"/>
+    <connection from="A3A2" to="A2bottom2" fromLane="5" toLane="4"/>
+    <!-- U turn -->
+    <connection from="A3A2" to="A2A3" fromLane="5" toLane="4"/>
+
+    <!-- From edge bottom2A2 -->
+    <!-- Right turn -->
+    <connection from="bottom2A2" to="A2A3" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="bottom2A2" to="A2B2" fromLane="2" toLane="2"/>
+    <connection from="bottom2A2" to="A2B2" fromLane="3" toLane="3"/>
+    <connection from="bottom2A2" to="A2B2" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="bottom2A2" to="A2A1" fromLane="4" toLane="2"/>
+    <connection from="bottom2A2" to="A2A1" fromLane="4" toLane="5"/>
+    <!-- U turn -->
+    <connection from="bottom2A2" to="A2bottom2" fromLane="4" toLane="3"/>
+
+    <!-- From edge A1A2 -->
+    <!-- Right turn -->
+    <connection from="A1A2" to="A2bottom2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="A1A2" to="A2A3" fromLane="2" toLane="2"/>
+    <connection from="A1A2" to="A2A3" fromLane="3" toLane="3"/>
+    <connection from="A1A2" to="A2A3" fromLane="4" toLane="4"/>
+    <connection from="A1A2" to="A2A3" fromLane="4" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="A1A2" to="A2B2" fromLane="5" toLane="2"/>
+    <connection from="A1A2" to="A2B2" fromLane="6" toLane="4"/>
+    <!-- U turn -->
+    <connection from="A1A2" to="A2A1" fromLane="6" toLane="3"/>
+
+    <!-- ==================== INTERSECTION A3 ==================== -->
+
+    <!-- From edge B3A3 -->
+    <!-- Right turn -->
+    <connection from="B3A3" to="A3A2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B3A3" to="A3bottom3" fromLane="2" toLane="2"/>
+    <connection from="B3A3" to="A3bottom3" fromLane="2" toLane="3"/>
+    <connection from="B3A3" to="A3bottom3" fromLane="3" toLane="4"/>
+    <connection from="B3A3" to="A3bottom3" fromLane="3" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="B3A3" to="A3right0" fromLane="4" toLane="2"/>
+    <connection from="B3A3" to="A3right0" fromLane="4" toLane="5"/>
+    <!-- U turn -->
+    <connection from="B3A3" to="A3B3" fromLane="4" toLane="3"/>
+
+    <!-- From edge right0A3 -->
+    <!-- Right turn -->
+    <connection from="right0A3" to="A3B3" fromLane="1" toLane="1"/>
+    <!-- Left turn -->
+    <connection from="right0A3" to="A3bottom3" fromLane="2" toLane="2"/>
+    <connection from="right0A3" to="A3bottom3" fromLane="2" toLane="5"/>
+    <!-- U turn -->
+    <connection from="right0A3" to="A3right0" fromLane="2" toLane="3"/>
+    <!-- Straight -->
+    <connection from="right0A3" to="A3A2" fromLane="3" toLane="2"/>
+    <connection from="right0A3" to="A3A2" fromLane="3" toLane="3"/>
+    <connection from="right0A3" to="A3A2" fromLane="4" toLane="4"/>
+    <connection from="right0A3" to="A3A2" fromLane="4" toLane="5"/>
+
+    <!-- From edge bottom3A3 -->
+    <!-- Right turn -->
+    <connection from="bottom3A3" to="A3right0" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="bottom3A3" to="A3B3" fromLane="2" toLane="2"/>
+    <connection from="bottom3A3" to="A3B3" fromLane="3" toLane="3"/>
+    <connection from="bottom3A3" to="A3B3" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="bottom3A3" to="A3A2" fromLane="4" toLane="2"/>
+    <connection from="bottom3A3" to="A3A2" fromLane="5" toLane="4"/>
+    <!-- U turn -->
+    <connection from="bottom3A3" to="A3bottom3" fromLane="5" toLane="3"/>
+
+    <!-- From edge A2A3 -->
+    <!-- Right turn -->
+    <connection from="A2A3" to="A3bottom3" fromLane="1" toLane="1"/>
+    <!-- Left turn -->
+    <connection from="A2A3" to="A3B3" fromLane="2" toLane="2"/>
+    <connection from="A2A3" to="A3B3" fromLane="3" toLane="4"/>
+    <!-- U turn -->
+    <connection from="A2A3" to="A3A2" fromLane="3" toLane="3"/>
+    <!-- Straight -->
+    <connection from="A2A3" to="A3right0" fromLane="4" toLane="2"/>
+    <connection from="A2A3" to="A3right0" fromLane="4" toLane="3"/>
+    <connection from="A2A3" to="A3right0" fromLane="5" toLane="4"/>
+    <connection from="A2A3" to="A3right0" fromLane="6" toLane="5"/>
+
+    <!-- ==================== INTERSECTION B0 ==================== -->
+
+    <!-- From edge C0B0 -->
+    <!-- Right turn -->
+    <connection from="C0B0" to="B0left1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="C0B0" to="B0A0" fromLane="2" toLane="2"/>
+    <connection from="C0B0" to="B0A0" fromLane="3" toLane="3"/>
+    <connection from="C0B0" to="B0A0" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="C0B0" to="B0B1" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="C0B0" to="B0C0" fromLane="4" toLane="3"/>
+
+    <!-- From edge B1B0 -->
+    <!-- Right turn -->
+    <connection from="B1B0" to="B0C0" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B1B0" to="B0left1" fromLane="2" toLane="2"/>
+    <connection from="B1B0" to="B0left1" fromLane="3" toLane="3"/>
+    <connection from="B1B0" to="B0left1" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="B1B0" to="B0A0" fromLane="4" toLane="2"/>
+    <connection from="B1B0" to="B0A0" fromLane="5" toLane="4"/>
+    <!-- U turn -->
+    <connection from="B1B0" to="B0B1" fromLane="5" toLane="3"/>
+
+    <!-- From edge A0B0 -->
+    <!-- Right turn -->
+    <connection from="A0B0" to="B0B1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="A0B0" to="B0C0" fromLane="2" toLane="2"/>
+    <connection from="A0B0" to="B0C0" fromLane="3" toLane="3"/>
+    <connection from="A0B0" to="B0C0" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="A0B0" to="B0left1" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="A0B0" to="B0A0" fromLane="4" toLane="3"/>
+
+    <!-- From edge left1B0 -->
+    <!-- Right turn -->
+    <connection from="left1B0" to="B0A0" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="left1B0" to="B0B1" fromLane="2" toLane="2"/>
+    <connection from="left1B0" to="B0B1" fromLane="3" toLane="3"/>
+    <connection from="left1B0" to="B0B1" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="left1B0" to="B0C0" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="left1B0" to="B0left1" fromLane="4" toLane="3"/>
+
+    <!-- ==================== INTERSECTION B1 ==================== -->
+
+    <!-- From edge C1B1 -->
+    <!-- Right turn -->
+    <connection from="C1B1" to="B1B0" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="C1B1" to="B1A1" fromLane="2" toLane="2"/>
+    <connection from="C1B1" to="B1A1" fromLane="3" toLane="3"/>
+    <connection from="C1B1" to="B1A1" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="C1B1" to="B1B2" fromLane="4" toLane="2"/>
+    <connection from="C1B1" to="B1B2" fromLane="4" toLane="5"/>
+    <!-- U turn -->
+    <connection from="C1B1" to="B1C1" fromLane="4" toLane="3"/>
+
+    <!-- From edge B2B1 -->
+    <!-- Right turn -->
+    <connection from="B2B1" to="B1C1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B2B1" to="B1B0" fromLane="2" toLane="2"/>
+    <connection from="B2B1" to="B1B0" fromLane="2" toLane="3"/>
+    <connection from="B2B1" to="B1B0" fromLane="3" toLane="4"/>
+    <connection from="B2B1" to="B1B0" fromLane="3" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="B2B1" to="B1A1" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="B2B1" to="B1B2" fromLane="4" toLane="3"/>
+
+    <!-- From edge A1B1 -->
+    <!-- Right turn -->
+    <connection from="A1B1" to="B1B2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="A1B1" to="B1C1" fromLane="2" toLane="2"/>
+    <connection from="A1B1" to="B1C1" fromLane="3" toLane="3"/>
+    <connection from="A1B1" to="B1C1" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="A1B1" to="B1B0" fromLane="4" toLane="2"/>
+    <connection from="A1B1" to="B1B0" fromLane="4" toLane="5"/>
+    <!-- U turn -->
+    <connection from="A1B1" to="B1A1" fromLane="4" toLane="3"/>
+
+    <!-- From edge B0B1 -->
+    <!-- Right turn -->
+    <connection from="B0B1" to="B1A1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B0B1" to="B1B2" fromLane="2" toLane="2"/>
+    <connection from="B0B1" to="B1B2" fromLane="2" toLane="3"/>
+    <connection from="B0B1" to="B1B2" fromLane="3" toLane="4"/>
+    <connection from="B0B1" to="B1B2" fromLane="3" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="B0B1" to="B1C1" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="B0B1" to="B1B0" fromLane="4" toLane="3"/>
+
+    <!-- ==================== INTERSECTION B2 ==================== -->
+
+    <!-- From edge C2B2 -->
+    <!-- Right turn -->
+    <connection from="C2B2" to="B2B1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="C2B2" to="B2A2" fromLane="2" toLane="2"/>
+    <connection from="C2B2" to="B2A2" fromLane="3" toLane="3"/>
+    <connection from="C2B2" to="B2A2" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="C2B2" to="B2B3" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="C2B2" to="B2C2" fromLane="4" toLane="3"/>
+
+    <!-- From edge B3B2 -->
+    <!-- Right turn -->
+    <connection from="B3B2" to="B2C2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B3B2" to="B2B1" fromLane="2" toLane="2"/>
+    <connection from="B3B2" to="B2B1" fromLane="3" toLane="3"/>
+    <connection from="B3B2" to="B2B1" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="B3B2" to="B2A2" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="B3B2" to="B2B3" fromLane="4" toLane="3"/>
+
+    <!-- From edge A2B2 -->
+    <!-- Right turn -->
+    <connection from="A2B2" to="B2B3" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="A2B2" to="B2C2" fromLane="2" toLane="2"/>
+    <connection from="A2B2" to="B2C2" fromLane="3" toLane="3"/>
+    <connection from="A2B2" to="B2C2" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="A2B2" to="B2B1" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="A2B2" to="B2A2" fromLane="4" toLane="3"/>
+
+    <!-- From edge B1B2 -->
+    <!-- Right turn -->
+    <connection from="B1B2" to="B2A2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B1B2" to="B2B3" fromLane="2" toLane="2"/>
+    <connection from="B1B2" to="B2B3" fromLane="3" toLane="3"/>
+    <connection from="B1B2" to="B2B3" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="B1B2" to="B2C2" fromLane="4" toLane="2"/>
+    <connection from="B1B2" to="B2C2" fromLane="5" toLane="4"/>
+    <!-- U turn -->
+    <connection from="B1B2" to="B2B1" fromLane="5" toLane="3"/>
+
+    <!-- ==================== INTERSECTION B3 ==================== -->
+
+    <!-- From edge C3B3 -->
+    <!-- Right turn -->
+    <connection from="C3B3" to="B3B2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="C3B3" to="B3A3" fromLane="2" toLane="2"/>
+    <connection from="C3B3" to="B3A3" fromLane="3" toLane="3"/>
+    <connection from="C3B3" to="B3A3" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="C3B3" to="B3right1" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="C3B3" to="B3C3" fromLane="4" toLane="3"/>
+
+    <!-- From edge right1B3 -->
+    <!-- Right turn -->
+    <connection from="right1B3" to="B3C3" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="right1B3" to="B3B2" fromLane="2" toLane="2"/>
+    <connection from="right1B3" to="B3B2" fromLane="3" toLane="3"/>
+    <connection from="right1B3" to="B3B2" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="right1B3" to="B3A3" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="right1B3" to="B3right1" fromLane="4" toLane="3"/>
+
+    <!-- From edge A3B3 -->
+    <!-- Right turn -->
+    <connection from="A3B3" to="B3right1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="A3B3" to="B3C3" fromLane="2" toLane="2"/>
+    <connection from="A3B3" to="B3C3" fromLane="3" toLane="3"/>
+    <connection from="A3B3" to="B3C3" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="A3B3" to="B3B2" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="A3B3" to="B3A3" fromLane="4" toLane="3"/>
+
+    <!-- From edge B2B3 -->
+    <!-- Right turn -->
+    <connection from="B2B3" to="B3A3" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B2B3" to="B3right1" fromLane="2" toLane="2"/>
+    <connection from="B2B3" to="B3right1" fromLane="3" toLane="3"/>
+    <connection from="B2B3" to="B3right1" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="B2B3" to="B3C3" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="B2B3" to="B3B2" fromLane="4" toLane="3"/>
+
+    <!-- ==================== INTERSECTION C0 ==================== -->
+
+    <!-- From edge top0C0 -->
+    <!-- Right turn -->
+    <connection from="top0C0" to="C0left2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="top0C0" to="C0B0" fromLane="2" toLane="2"/>
+    <connection from="top0C0" to="C0B0" fromLane="3" toLane="3"/>
+    <connection from="top0C0" to="C0B0" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="top0C0" to="C0C1" fromLane="4" toLane="2"/>
+    <connection from="top0C0" to="C0C1" fromLane="5" toLane="5"/>
+    <!-- U turn -->
+    <connection from="top0C0" to="C0top0" fromLane="5" toLane="3"/>
+
+    <!-- From edge C1C0 -->
+    <!-- Right turn -->
+    <connection from="C1C0" to="C0top0" fromLane="1" toLane="1"/>
+    <!-- Left turn -->
+    <connection from="C1C0" to="C0B0" fromLane="2" toLane="2"/>
+    <connection from="C1C0" to="C0B0" fromLane="3" toLane="4"/>
+    <!-- U turn -->
+    <connection from="C1C0" to="C0C1" fromLane="3" toLane="3"/>
+    <!-- Straight -->
+    <connection from="C1C0" to="C0left2" fromLane="4" toLane="2"/>
+    <connection from="C1C0" to="C0left2" fromLane="4" toLane="3"/>
+    <connection from="C1C0" to="C0left2" fromLane="5" toLane="4"/>
+    <connection from="C1C0" to="C0left2" fromLane="6" toLane="5"/>
+
+    <!-- From edge B0C0 -->
+    <!-- Right turn -->
+    <connection from="B0C0" to="C0C1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B0C0" to="C0top0" fromLane="2" toLane="2"/>
+    <connection from="B0C0" to="C0top0" fromLane="2" toLane="3"/>
+    <connection from="B0C0" to="C0top0" fromLane="3" toLane="4"/>
+    <connection from="B0C0" to="C0top0" fromLane="3" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="B0C0" to="C0left2" fromLane="4" toLane="3"/>
+    <!-- U turn -->
+    <connection from="B0C0" to="C0B0" fromLane="4" toLane="3"/>
+
+    <!-- From edge left2C0 -->
+    <!-- Right turn -->
+    <connection from="left2C0" to="C0B0" fromLane="1" toLane="1"/>
+    <!-- Left turn -->
+    <connection from="left2C0" to="C0top0" fromLane="2" toLane="2"/>
+    <connection from="left2C0" to="C0top0" fromLane="3" toLane="4"/>
+    <!-- U turn -->
+    <connection from="left2C0" to="C0left2" fromLane="3" toLane="3"/>
+    <!-- Straight -->
+    <connection from="left2C0" to="C0C1" fromLane="4" toLane="2"/>
+    <connection from="left2C0" to="C0C1" fromLane="4" toLane="3"/>
+    <connection from="left2C0" to="C0C1" fromLane="5" toLane="4"/>
+    <connection from="left2C0" to="C0C1" fromLane="5" toLane="5"/>
+
+    <!-- ==================== INTERSECTION C1 ==================== -->
+
+    <!-- From edge top1C1 -->
+    <!-- Right turn -->
+    <connection from="top1C1" to="C1C0" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="top1C1" to="C1B1" fromLane="2" toLane="2"/>
+    <connection from="top1C1" to="C1B1" fromLane="3" toLane="3"/>
+    <connection from="top1C1" to="C1B1" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="top1C1" to="C1C2" fromLane="4" toLane="2"/>
+    <connection from="top1C1" to="C1C2" fromLane="4" toLane="5"/>
+    <!-- U turn -->
+    <connection from="top1C1" to="C1top1" fromLane="4" toLane="3"/>
+
+    <!-- From edge C2C1 -->
+    <!-- Right turn -->
+    <connection from="C2C1" to="C1top1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="C2C1" to="C1C0" fromLane="2" toLane="2"/>
+    <connection from="C2C1" to="C1C0" fromLane="3" toLane="3"/>
+    <connection from="C2C1" to="C1C0" fromLane="4" toLane="4"/>
+    <connection from="C2C1" to="C1C0" fromLane="4" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="C2C1" to="C1B1" fromLane="5" toLane="2"/>
+    <connection from="C2C1" to="C1B1" fromLane="6" toLane="4"/>
+    <!-- U turn -->
+    <connection from="C2C1" to="C1C2" fromLane="6" toLane="3"/>
+
+    <!-- From edge B1C1 -->
+    <!-- Right turn -->
+    <connection from="B1C1" to="C1C2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B1C1" to="C1top1" fromLane="2" toLane="2"/>
+    <connection from="B1C1" to="C1top1" fromLane="3" toLane="3"/>
+    <connection from="B1C1" to="C1top1" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="B1C1" to="C1C0" fromLane="4" toLane="2"/>
+    <connection from="B1C1" to="C1C0" fromLane="4" toLane="6"/>
+    <!-- U turn -->
+    <connection from="B1C1" to="C1B1" fromLane="4" toLane="3"/>
+
+    <!-- From edge C0C1 -->
+    <!-- Right turn -->
+    <connection from="C0C1" to="C1B1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="C0C1" to="C1C2" fromLane="2" toLane="2"/>
+    <connection from="C0C1" to="C1C2" fromLane="3" toLane="3"/>
+    <connection from="C0C1" to="C1C2" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="C0C1" to="C1top1" fromLane="4" toLane="2"/>
+    <connection from="C0C1" to="C1top1" fromLane="5" toLane="4"/>
+    <!-- U turn -->
+    <connection from="C0C1" to="C1C0" fromLane="5" toLane="4"/>
+
+    <!-- ==================== INTERSECTION C2 ==================== -->
+
+    <!-- From edge top2C2 -->
+    <!-- Right turn -->
+    <connection from="top2C2" to="C2C1" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="top2C2" to="C2B2" fromLane="2" toLane="2"/>
+    <connection from="top2C2" to="C2B2" fromLane="3" toLane="3"/>
+    <connection from="top2C2" to="C2B2" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="top2C2" to="C2C3" fromLane="4" toLane="2"/>
+    <connection from="top2C2" to="C2C3" fromLane="4" toLane="5"/>
+    <!-- U turn -->
+    <connection from="top2C2" to="C2top2" fromLane="4" toLane="3"/>
+
+    <!-- From edge C3C2 -->
+    <!-- Right turn -->
+    <connection from="C3C2" to="C2top2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="C3C2" to="C2C1" fromLane="2" toLane="2"/>
+    <connection from="C3C2" to="C2C1" fromLane="3" toLane="3"/>
+    <connection from="C3C2" to="C2C1" fromLane="4" toLane="4"/>
+    <connection from="C3C2" to="C2C1" fromLane="4" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="C3C2" to="C2B2" fromLane="5" toLane="2"/>
+    <connection from="C3C2" to="C2B2" fromLane="6" toLane="4"/>
+    <!-- U turn -->
+    <connection from="C3C2" to="C2C3" fromLane="6" toLane="3"/>
+
+    <!-- From edge B2C2 -->
+    <!-- Right turn -->
+    <connection from="B2C2" to="C2C3" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B2C2" to="C2top2" fromLane="2" toLane="2"/>
+    <connection from="B2C2" to="C2top2" fromLane="3" toLane="3"/>
+    <connection from="B2C2" to="C2top2" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="B2C2" to="C2C1" fromLane="4" toLane="2"/>
+    <connection from="B2C2" to="C2C1" fromLane="4" toLane="6"/>
+    <!-- U turn -->
+    <connection from="B2C2" to="C2B2" fromLane="4" toLane="3"/>
+
+    <!-- From edge C1C2 -->
+    <!-- Right turn -->
+    <connection from="C1C2" to="C2B2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="C1C2" to="C2C3" fromLane="2" toLane="2"/>
+    <connection from="C1C2" to="C2C3" fromLane="3" toLane="3"/>
+    <connection from="C1C2" to="C2C3" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="C1C2" to="C2top2" fromLane="4" toLane="2"/>
+    <connection from="C1C2" to="C2top2" fromLane="5" toLane="4"/>
+    <!-- U turn -->
+    <connection from="C1C2" to="C2C1" fromLane="5" toLane="4"/>
+
+    <!-- ==================== INTERSECTION C3 ==================== -->
+
+    <!-- From edge top3C3 -->
+    <!-- Right turn -->
+    <connection from="top3C3" to="C3C2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="top3C3" to="C3B3" fromLane="2" toLane="2"/>
+    <connection from="top3C3" to="C3B3" fromLane="3" toLane="3"/>
+    <connection from="top3C3" to="C3B3" fromLane="3" toLane="4"/>
+    <!-- Left turn -->
+    <connection from="top3C3" to="C3right2" fromLane="4" toLane="2"/>
+    <connection from="top3C3" to="C3right2" fromLane="5" toLane="4"/>
+    <!-- U turn -->
+    <connection from="top3C3" to="C3top3" fromLane="5" toLane="3"/>
+
+    <!-- From edge right2C3 -->
+    <!-- Right turn -->
+    <connection from="right2C3" to="C3top3" fromLane="1" toLane="1"/>
+    <!-- Left turn -->
+    <connection from="right2C3" to="C3B3" fromLane="2" toLane="2"/>
+    <connection from="right2C3" to="C3B3" fromLane="2" toLane="4"/>
+    <!-- U turn -->
+    <connection from="right2C3" to="C3right2" fromLane="2" toLane="3"/>
+    <!-- Straight -->
+    <connection from="right2C3" to="C3C2" fromLane="3" toLane="2"/>
+    <connection from="right2C3" to="C3C2" fromLane="3" toLane="3"/>
+    <connection from="right2C3" to="C3C2" fromLane="4" toLane="5"/>
+    <connection from="right2C3" to="C3C2" fromLane="4" toLane="6"/>
+
+    <!-- From edge B3C3 -->
+    <!-- Right turn -->
+    <connection from="B3C3" to="C3right2" fromLane="1" toLane="1"/>
+    <!-- Straight -->
+    <connection from="B3C3" to="C3top3" fromLane="2" toLane="2"/>
+    <connection from="B3C3" to="C3top3" fromLane="2" toLane="3"/>
+    <connection from="B3C3" to="C3top3" fromLane="3" toLane="4"/>
+    <connection from="B3C3" to="C3top3" fromLane="3" toLane="5"/>
+    <!-- Left turn -->
+    <connection from="B3C3" to="C3C2" fromLane="4" toLane="2"/>
+    <connection from="B3C3" to="C3C2" fromLane="4" toLane="6"/>
+    <!-- U turn -->
+    <connection from="B3C3" to="C3B3" fromLane="4" toLane="3"/>
+
+    <!-- From edge C2C3 -->
+    <!-- Right turn -->
+    <connection from="C2C3" to="C3B3" fromLane="1" toLane="1"/>
+    <!-- Left turn -->
+    <connection from="C2C3" to="C3top3" fromLane="2" toLane="2"/>
+    <connection from="C2C3" to="C3top3" fromLane="3" toLane="4"/>
+    <!-- U turn -->
+    <connection from="C2C3" to="C3C2" fromLane="3" toLane="4"/>
+    <!-- Straight -->
+    <connection from="C2C3" to="C3right2" fromLane="4" toLane="2"/>
+    <connection from="C2C3" to="C3right2" fromLane="4" toLane="3"/>
+    <connection from="C2C3" to="C3right2" fromLane="5" toLane="4"/>
+
+</connections>

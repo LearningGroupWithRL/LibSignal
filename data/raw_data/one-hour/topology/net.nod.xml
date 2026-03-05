@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+
+    <!-- ==================== MAIN INTERSECTIONS (Traffic Lights) ==================== -->
+    <node id="A0" x="480"  y="460"  type="traffic_light" radius="5"/>
+    <node id="B0" x="510"  y="1030" type="traffic_light" radius="5"/>
+    <node id="C0" x="490"  y="1480" type="traffic_light" radius="5"/>
+    <node id="A1" x="1020" y="510"  type="traffic_light" radius="5"/>
+    <node id="B1" x="990"  y="1020" type="traffic_light" radius="5"/>
+    <node id="C1" x="1000" y="1480" type="traffic_light" radius="5"/>
+    <node id="A2" x="1510" y="480"  type="traffic_light" radius="5"/>
+    <node id="B2" x="1490" y="1000" type="traffic_light" radius="5"/>
+    <node id="C2" x="1530" y="1530" type="traffic_light" radius="5"/>
+    <node id="A3" x="1980" y="480"  type="traffic_light" radius="5"/>
+    <node id="B3" x="1970" y="990"  type="traffic_light" radius="5"/>
+    <node id="C3" x="2010" y="1520" type="traffic_light" radius="5"/>
+
+    <!-- ==================== FRINGE NODES (External Network) ==================== -->
+    <node id="top0"    x="450"  y="2000" type="priority" fringe="outer"/>
+    <node id="top1"    x="1020" y="2000" type="priority" fringe="outer"/>
+    <node id="top2"    x="1480" y="2000" type="priority" fringe="outer"/>
+    <node id="top3"    x="1970" y="2000" type="priority" fringe="outer"/>
+    <node id="bottom0" x="530"  y="0"    type="priority" fringe="outer"/>
+    <node id="bottom1" x="1040" y="0"    type="priority" fringe="outer"/>
+    <node id="bottom2" x="1480" y="0"    type="priority" fringe="outer"/>
+    <node id="bottom3" x="1990" y="0"    type="priority" fringe="outer"/>
+    <node id="left0"   x="0"    y="510"  type="priority" fringe="outer"/>
+    <node id="left1"   x="0"    y="970"  type="priority" fringe="outer"/>
+    <node id="left2"   x="0"    y="1490" type="priority" fringe="outer"/>
+    <node id="right0"  x="2500" y="520"  type="priority" fringe="outer"/>
+    <node id="right1"  x="2500" y="990"  type="priority" fringe="outer"/>
+    <node id="right2"  x="2500" y="1470" type="priority" fringe="outer"/>
+
+</nodes>

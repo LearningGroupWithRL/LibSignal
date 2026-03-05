@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+
+    <!-- ==================== INTERSECTION A0 ==================== -->
+    <edge id="B0A0" from="B0" to="A0" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A1A0" from="A1" to="A0" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="bottom0A0" from="bottom0" to="A0" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="left0A0" from="left0" to="A0" type="arterial_5" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION A1 ==================== -->
+    <edge id="B1A1" from="B1" to="A1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A2A1" from="A2" to="A1" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="bottom1A1" from="bottom1" to="A1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A0A1" from="A0" to="A1" type="arterial_6" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION A2 ==================== -->
+    <edge id="B2A2" from="B2" to="A2" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A3A2" from="A3" to="A2" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="bottom2A2" from="bottom2" to="A2" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A1A2" from="A1" to="A2" type="arterial_6" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION A3 ==================== -->
+    <edge id="B3A3" from="B3" to="A3" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="right0A3" from="right0" to="A3" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="bottom3A3" from="bottom3" to="A3" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="A2A3" from="A2" to="A3" type="arterial_6" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION B0 ==================== -->
+    <edge id="C0B0" from="C0" to="B0" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="B1B0" from="B1" to="B0" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="A0B0" from="A0" to="B0" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="left1B0" from="left1" to="B0" type="arterial_4" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION B1 ==================== -->
+    <edge id="C1B1" from="C1" to="B1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="B2B1" from="B2" to="B1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A1B1" from="A1" to="B1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="B0B1" from="B0" to="B1" type="arterial_4" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION B2 ==================== -->
+    <edge id="C2B2" from="C2" to="B2" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="B3B2" from="B3" to="B2" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A2B2" from="A2" to="B2" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="B1B2" from="B1" to="B2" type="arterial_5" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION B3 ==================== -->
+    <edge id="C3B3" from="C3" to="B3" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="right1B3" from="right1" to="B3" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A3B3" from="A3" to="B3" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="B2B3" from="B2" to="B3" type="arterial_4" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION C0 ==================== -->
+    <edge id="top0C0" from="top0" to="C0" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="C1C0" from="C1" to="C0" type="arterial_6" spreadType="roadCenter"/>
+    <edge id="B0C0" from="B0" to="C0" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="left2C0" from="left2" to="C0" type="arterial_5" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION C1 ==================== -->
+    <edge id="top1C1" from="top1" to="C1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="C2C1" from="C2" to="C1" type="arterial_6" spreadType="roadCenter"/>
+    <edge id="B1C1" from="B1" to="C1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="C0C1" from="C0" to="C1" type="arterial_5" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION C2 ==================== -->
+    <edge id="top2C2" from="top2" to="C2" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="C3C2" from="C3" to="C2" type="arterial_6" spreadType="roadCenter"/>
+    <edge id="B2C2" from="B2" to="C2" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="C1C2" from="C1" to="C2" type="arterial_5" spreadType="roadCenter"/>
+
+    <!-- ==================== INTERSECTION C3 ==================== -->
+    <edge id="top3C3" from="top3" to="C3" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="right2C3" from="right2" to="C3" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="B3C3" from="B3" to="C3" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="C2C3" from="C2" to="C3" type="arterial_5" spreadType="roadCenter"/>
+
+    <!-- ==================== OUTGOING EDGES TO FRINGE NODES ==================== -->
+    <edge id="A0bottom0" from="A0" to="bottom0" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A0left0" from="A0" to="left0" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="A1bottom1" from="A1" to="bottom1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A2bottom2" from="A2" to="bottom2" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="A3bottom3" from="A3" to="bottom3" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="A3right0" from="A3" to="right0" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="B0left1" from="B0" to="left1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="B3right1" from="B3" to="right1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="C0top0" from="C0" to="top0" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="C0left2" from="C0" to="left2" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="C1top1" from="C1" to="top1" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="C2top2" from="C2" to="top2" type="arterial_4" spreadType="roadCenter"/>
+    <edge id="C3top3" from="C3" to="top3" type="arterial_5" spreadType="roadCenter"/>
+    <edge id="C3right2" from="C3" to="right2" type="arterial_4" spreadType="roadCenter"/>
+
+</edges>

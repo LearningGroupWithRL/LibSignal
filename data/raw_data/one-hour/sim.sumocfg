@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="network/sim.net.xml"/>
+        <additional-files value="topology/detectors.add.xml"/>
+        <route-files value="routes/ambulance.rou.xml,
+                            routes/sedan.rou.xml,
+                            routes/suv.rou.xml,
+                            routes/truck.rou.xml"/>
+    </input>
+
+    <time>
+        <begin value="600"/>
+        <end value="4200"/>
+        <step-length value="1"/>
+    </time>
+
+    <processing>
+        <time-to-teleport value="300"/>
+        <waiting-time-memory value="300"/>
+        <routing-algorithm value="astar"/>
+        <weights.random-factor value="1.0"/>
+        <device.rerouting.probability value="1.0"/>
+        <device.rerouting.period value="100"/>
+    </processing>
+
+    <output>
+        <tripinfo-output value="outputs/tripinfo.xml"/>
+        <summary-output value="outputs/summary.xml"/>
+        <collision-output value="outputs/collisions.xml"/>
+        <statistics-output value="outputs/statistics.xml"/>
+        <deadlock-output value="outputs/deadlocks.xml"/>
+    </output>
+
+    <report>
+        <no-step-log value="true"/>
+        <no-warnings value="true"/>
+    </report>
+
+    <gui_only>
+        <gui-settings-file value="gui.settings.xml"/>
+    </gui_only>
+
+</configuration>
