@@ -195,7 +195,7 @@ class ColightNet(nn.Module):
         return h
 
 
-class CoLightAgent(RLAgent_t):
+class CoLightAgent(RLAgent):
     def __init__(self, action_space, ob_generator, reward_generator, world, traffic_env_conf, graph_setting, args):
         super().__init__(action_space, ob_generator[0][1], reward_generator)
         self.action_space = action_space

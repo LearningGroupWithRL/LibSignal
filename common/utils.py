@@ -313,4 +313,3 @@ def build_config(args):
     cityflow_setting = json.load(open(config['path'], 'r'))
     config['traffic']['network'] = cityflow_setting['network'] if 'network' in cityflow_setting.keys() else None
     return config
-

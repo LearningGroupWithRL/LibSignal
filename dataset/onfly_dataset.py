@@ -65,4 +65,3 @@ class OnFlyDataset(object):
         val = self.txn.get(key.encode())
         result = eval(val.decode())
         return result
-

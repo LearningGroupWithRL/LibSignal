@@ -298,4 +298,3 @@ class TSCTrainer(BaseTrainer):
         log_handle = open(self.log_file, "a")
         log_handle.write(res + "\n")
         log_handle.close()
-

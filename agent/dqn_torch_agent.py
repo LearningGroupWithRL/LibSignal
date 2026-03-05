@@ -1,4 +1,4 @@
-import gym
+import gymnasium as gym
 import torch
 
 from .import RLAgent
@@ -36,8 +36,8 @@ class DQNAgent(RLAgent):
     def __init__(self, world, intersection_ids):
         super().__init__(world, intersection_ids)
 
-        self.iid = iid
-        self.ob_generator = ob_generator
+        # self.iid = iid
+        # self.ob_generator = ob_generator
         self.list_feature_name = ['num_of_vehicles', 'cur_phase']
         ob_length = [State.dims["D_" + feature_name.upper()][0] for feature_name in self.list_feature_name]
         self.ob_length = sum(ob_length)

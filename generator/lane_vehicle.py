@@ -1,6 +1,10 @@
 import numpy as np
 from . import BaseGenerator
-from world import world_cityflow, world_sumo #, world_openengine
+from world import (
+    # world_cityflow,
+    # world_openengine,
+    world_sumo,
+)
 
 
 class LaneVehicleGenerator(BaseGenerator):
@@ -100,10 +104,10 @@ class LaneVehicleGenerator(BaseGenerator):
                     tmp = sorted(I.road_lane_mapping[r], key=lambda ob: int(ob[-1]))
                 self.lanes.append(tmp)
                 # TODO: rank lanes by lane ranking [0,1,2], assume we only have one digit for ranking
-        elif isinstance(world, world_cityflow.World):
-            for road in roads:
-                from_zero = (road["startIntersection"] == I.id) if self.world.RIGHT else (road["endIntersection"] == I.id)
-                self.lanes.append([road["id"] + "_" + str(i) for i in range(len(road["lanes"]))[::(1 if from_zero else -1)]])
+        # elif isinstance(world, world_cityflow.World):
+        #     for road in roads:
+        #         from_zero = (road["startIntersection"] == I.id) if self.world.RIGHT else (road["endIntersection"] == I.id)
+        #         self.lanes.append([road["id"] + "_" + str(i) for i in range(len(road["lanes"]))[::(1 if from_zero else -1)]])
         # ---------------------------------------------------------------------------------------------------------------
         
         # elif isinstance(world, world_openengine.World):
@@ -189,4 +193,3 @@ if __name__ == "__main__":
     for _ in range(100):
         world.step()
     print(laneVehicle.generate())
-

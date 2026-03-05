@@ -19,7 +19,6 @@ import re
 import copy
 
 import sumolib
-import libsumo
 import traci
 
 class Intersection(object):
@@ -337,7 +336,6 @@ class Intersection(object):
         return tmp if tmp >= 0 else (tmp + 2 * pi)
 
     def create_yellows(self, phases, yellow_length, interface_flag):
-        # interface_flag: 1:libsumo, 0: traci
         new_phases = copy.copy(phases)
         yellow_dict = {}    # current phase + next phase keyed to corresponding yellow phase index
         # Automatically create yellow phases, traci will report missing phases as it assumes execution by index order
@@ -352,10 +350,7 @@ class Intersection(object):
                         else:
                             yellow_str += phases[i].state[sig_idx]
                     if need_yellow:  # If a yellow is required
-                        if interface_flag:
-                            new_phases.append(libsumo.trafficlight.Phase(yellow_length, yellow_str))
-                        else:
-                            new_phases.append(traci.trafficlight.Phase(yellow_length, yellow_str))
+                        new_phases.append(traci.trafficlight.Phase(yellow_length, yellow_str))
                         yellow_dict[str(i) + '_' + str(j)] = len(new_phases) - 1  # The index of the yellow phase in SUMO
         return new_phases, yellow_dict
 
@@ -368,9 +363,7 @@ class World(object):
     World Class is mainly used for creating a SUMO engine and maintain information about SUMO world.
     '''
     def __init__(self, sumo_config, placeholder=0, **kwargs):
-        if kwargs['interface'] == 'libsumo':
-            self.interface_flag = True
-        elif kwargs['interface'] == 'traci':
+        if kwargs['interface'] == 'traci':
             self.interface_flag = False
         else:
             raise Exception('NOT IMPORTED YET')
@@ -395,16 +388,12 @@ class World(object):
         self.connection_name = sumo_dict['name']
         self.map = sumo_dict['roadnetFile'].split('/')[-1].split('.')[0]
         
-        if self.interface_flag:
-            libsumo.start(sumo_cmd)
-            self.eng = libsumo
+        if not sumo_dict['name']:
+            traci.start(sumo_cmd)
+            self.eng = traci
         else:
-            if not sumo_dict['name']:
-                traci.start(sumo_cmd)
-                self.eng = traci
-            else:
-                traci.start(sumo_cmd, label=sumo_dict['name'])
-                self.eng = traci.getConnection(sumo_dict['name'])
+            traci.start(sumo_cmd, label=sumo_dict['name'])
+            self.eng = traci.getConnection(sumo_dict['name'])
         # TODO: roadnet not implemented but not necessary
         self.RIGHT = True  # TODO: currently set to be true
         self.interval = sumo_dict['interval']
@@ -442,14 +431,9 @@ class World(object):
         self.vehicles = dict()
         for intsec in self.intersections:
             intsec.observe(self.step_length, self.max_distance)
-        if self.interface_flag:
-            if not self.connection_name: 
-                libsumo.switch(self.connection_name)  # TODO: make sure what's this step doing
-            libsumo.close()
-        else:
-            if not self.connection_name: 
-                traci.switch(self.connection_name)  # TODO: make sure what's this step doing
-            traci.close()
+        if not self.connection_name: 
+            traci.switch(self.connection_name)  # TODO: make sure what's this step doing
+        traci.close()
         # self.connection_name = self.map + '-' + self.connection_name
         if not os.path.exists(os.path.join(Registry.mapping['logger_mapping']['path'].path,
                                            self.connection_name)):
@@ -562,22 +546,13 @@ class World(object):
         :return: None
         '''
         if self.run != 0:
-            # TODO: test why need switch in original code
-            if self.interface_flag:
-                libsumo.close()
-            else:
-                traci.close()
+            traci.close()
         self.run = 0
         self.vehicles = dict()
         self.inside_vehicles = dict()
-        # TODO: check when to close traci
-        if self.interface_flag:
-            libsumo.start(self.sumo_cmd)
-            # TODO: set trip info output
-            self.eng = libsumo
-        else:
-            traci.start(self.sumo_cmd, label=self.connection_name)
-            self.eng = traci.getConnection(self.connection_name)
+        
+        traci.start(self.sumo_cmd, label=self.connection_name)
+        self.eng = traci.getConnection(self.connection_name)
         self.id2intersection = dict()
         self.intersections = []
         for ts in self.eng.trafficlight.getIDList():
@@ -948,6 +923,3 @@ class World(object):
             count += 1
         avg_delay = avg_delay / count
         return avg_delay
-
-
-
