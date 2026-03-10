@@ -45,10 +45,15 @@ class TSCTrainer(BaseTrainer):
         self.dataset.initiate(ep=self.episodes, step=self.steps, interval=self.action_interval)
         self.yellow_time = Registry.mapping['trainer_mapping']['setting'].param['yellow_length']
         # consists of path of output dir + log_dir + file handlers name
-        self.log_file = os.path.join(Registry.mapping['logger_mapping']['path'].path,
-                                     Registry.mapping['logger_mapping']['setting'].param['log_dir'],
-                                     os.path.basename(self.logger.handlers[-1].baseFilename).rstrip('_BRF.log') + '_DTL.log'
-                                     )
+        self.log_file = os.path.join(
+            Registry.mapping['logger_mapping']['path'].path,
+            Registry.mapping['logger_mapping']['setting'].param['log_dir'],
+            os.path.basename(self.logger.handlers[-1].baseFilename).rstrip('_BRF.log') + '_DTL.log'
+        )
+
+        self.training_metrics_file = os.path.join(Registry.mapping['logger_mapping']['path'].path, 'training_metrics.csv')
+        self.test_metrics_file = os.path.join(Registry.mapping['logger_mapping']['path'].path, 'test_metrics.csv')
+        self.write_metric_headers()
 
     def create_world(self):
         '''
@@ -110,6 +115,27 @@ class TSCTrainer(BaseTrainer):
         # TODO: finalized list or non list
         self.env = TSCEnv(self.world, self.agents, self.metric)
 
+    def write_metric_headers(self):
+        with open(self.training_metrics_file, 'w') as f:
+            headers = ['episode', 'rewards', 'real_avg_travel_time', 'queue', 'delay', 'throughput']
+            f.write(', '.join(headers) + '\n')
+
+        with open(self.test_metrics_file, 'w') as f:
+            headers = ['episode', 'rewards', 'real_avg_travel_time', 'queue', 'delay', 'throughput']
+            f.write(', '.join(headers) + '\n')
+
+    def save_metrics(self, episode: int, test: bool = False):
+        file = self.test_metrics_file if test else self.training_metrics_file
+        with open(file, 'a') as f:
+            f.write(
+                f"{episode}, "
+                f"{self.metric.rewards()}, "
+                f"{self.metric.real_average_travel_time()}, "
+                f"{self.metric.queue()}, "
+                f"{self.metric.delay()}, "
+                f"{self.metric.throughput()}\n"
+            )
+
     def train(self):
         '''
         train
@@ -136,6 +162,7 @@ class TSCTrainer(BaseTrainer):
             episode_loss = []
             i = 0
             while i < self.steps:
+                print(f"Episode {e}, Step {i}/{self.steps}", end='\r')
                 if i % self.action_interval == 0:
                     last_phase = np.stack([ag.get_phase() for ag in self.agents])  # [agent, intersections]
 
@@ -185,7 +212,8 @@ class TSCTrainer(BaseTrainer):
                 mean_loss = np.mean(np.array(episode_loss))
             else:
                 mean_loss = 0
-            
+
+            self.save_metrics(e, test=False)
             self.writeLog("TRAIN", e, self.metric.real_average_travel_time(),\
                 mean_loss, self.metric.rewards(), self.metric.queue(), self.metric.delay(), self.metric.throughput())
             self.logger.info("step:{}/{}, q_loss:{}, rewards:{}, queue:{}, delay:{}, throughput:{}".format(i, self.steps,\
@@ -234,6 +262,7 @@ class TSCTrainer(BaseTrainer):
             self.metric.queue(), self.metric.delay(), int(self.metric.throughput())))
         self.writeLog("TEST", e, self.metric.real_average_travel_time(),\
             100, self.metric.rewards(),self.metric.queue(),self.metric.delay(), self.metric.throughput())
+        self.save_metrics(e, test=True)
         return self.metric.real_average_travel_time()
 
     def test(self, drop_load=True):
@@ -275,6 +304,7 @@ class TSCTrainer(BaseTrainer):
                 break
         self.logger.info("Final Travel Time is %.4f, mean rewards: %.4f, queue: %.4f, delay: %.4f, throughput: %d" % (self.metric.real_average_travel_time(), \
             self.metric.rewards(), self.metric.queue(), self.metric.delay(), self.metric.throughput()))
+        self.save_metrics(1, test=True)
         return self.metric
 
     def writeLog(self, mode, step, travel_time, loss, cur_rwd, cur_queue, cur_delay, cur_throughput):

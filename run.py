@@ -77,5 +77,8 @@ class Runner:
 
 
 if __name__ == '__main__':
-    test = Runner(args)
-    test.run()
+    tsc_agents = ["dqn"]
+    for tsc_agent in tsc_agents:
+        args.agent = tsc_agent
+        test = Runner(args)
+        test.run()

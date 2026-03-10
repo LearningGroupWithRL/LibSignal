@@ -135,5 +135,3 @@ class BaseTrainer(ABC):
     @abstractmethod
     def test(self, drop_load=False):
         """Derived classes should implement this function."""
-        
-

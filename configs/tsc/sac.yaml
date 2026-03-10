@@ -1,0 +1,22 @@
+includes:
+  - configs/tsc/base.yml
+
+model:
+  name: sac
+  train_model: True
+  graphic: False
+  vehicle_max: 1
+  epsilon: 0.8
+  epsilon_decay: 0.9995
+  epsilon_min: 0.01
+  gamma: 0.99
+  grad_clip: 5.0
+  learning_rate: 3e-4
+  batch_size: 64
+  sac_temperature: 0.1
+  one_hot: True
+  phase: True
+
+trainer:
+  learning_start: 1000
+  buffer_size: 4096
