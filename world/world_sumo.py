@@ -387,7 +387,10 @@ class World(object):
         print("building world...")
         self.connection_name = sumo_dict['name']
         self.map = sumo_dict['roadnetFile'].split('/')[-1].split('.')[0]
-        
+
+        if traci.isLoaded():
+            traci.close()
+
         if not sumo_dict['name']:
             traci.start(sumo_cmd)
             self.eng = traci
@@ -537,6 +540,9 @@ class World(object):
         self.vehicle_trajectory, self.vehicle_maxspeed = self.get_vehicle_trajectory()
         self.run += 1
 
+    def stop(self):
+        traci.close()
+
     def reset(self):
         '''
         reset
@@ -545,8 +551,9 @@ class World(object):
         :param: None
         :return: None
         '''
-        if self.run != 0:
+        if traci.isLoaded():
             traci.close()
+
         self.run = 0
         self.vehicles = dict()
         self.inside_vehicles = dict()

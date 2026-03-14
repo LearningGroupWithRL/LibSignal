@@ -49,10 +49,11 @@ class TSCTrainer(BaseTrainer):
             Registry.mapping['logger_mapping']['path'].path,
             Registry.mapping['logger_mapping']['setting'].param['log_dir'],
             os.path.basename(self.logger.handlers[-1].baseFilename).rstrip('_BRF.log') + '_DTL.log'
-        )
+        ).replace("\\", "/")
+        os.makedirs(os.path.dirname(self.log_file), exist_ok=True)
 
-        self.training_metrics_file = os.path.join(Registry.mapping['logger_mapping']['path'].path, 'training_metrics.csv')
-        self.test_metrics_file = os.path.join(Registry.mapping['logger_mapping']['path'].path, 'test_metrics.csv')
+        self.training_metrics_file = os.path.join(Registry.mapping['logger_mapping']['path'].path, 'training_metrics.csv').replace("\\", "/")
+        self.test_metrics_file = os.path.join(Registry.mapping['logger_mapping']['path'].path, 'test_metrics.csv').replace("\\", "/")
         self.write_metric_headers()
 
     def create_world(self):
@@ -224,10 +225,11 @@ class TSCTrainer(BaseTrainer):
             for j in range(len(self.world.intersections)):
                 self.logger.debug("intersection:{}, mean_episode_reward:{}, mean_queue:{}".format(j, self.metric.lane_rewards()[j],\
                      self.metric.lane_queue()[j]))
-            if self.test_when_train:
+            if self.test_when_train and e % 20 == 0:
                 self.train_test(e)
         # self.dataset.flush([ag.replay_buffer for ag in self.agents])
         [ag.save_model(e=self.episodes) for ag in self.agents]
+        self.env.close()
 
     def train_test(self, e):
         '''
