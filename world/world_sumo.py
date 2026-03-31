@@ -543,7 +543,7 @@ class World(object):
     def stop(self):
         traci.close()
 
-    def reset(self):
+    def reset(self, test=False, **kwargs):
         '''
         reset
         reset information, including vehicles, vehicle_trajectory, etc.
@@ -557,7 +557,21 @@ class World(object):
         self.run = 0
         self.vehicles = dict()
         self.inside_vehicles = dict()
-        
+
+        cmd = self.sumo_cmd
+        if test:
+            folder_name = f"data/raw_data/{self.map}/outputs"
+            cmd = [
+                "--tripinfo-output", f"{folder_name}/tripinfo.xml",
+                "--tripinfo-output.write-unfinished", "true",
+                "--summary-output", f"{folder_name}/summary.xml",
+                "--collision-output", f"{folder_name}/collisions.xml",
+                "--statistics-output", f"{folder_name}/statistics.xml",
+                "--deadlock-output", f"{folder_name}/deadlocks.xml",
+                "--emission-output", f"{folder_name}/emissions.xml",
+                "--queue-output", f"{folder_name}/queues.xml",
+            ]
+
         traci.start(self.sumo_cmd, label=self.connection_name)
         self.eng = traci.getConnection(self.connection_name)
         self.id2intersection = dict()

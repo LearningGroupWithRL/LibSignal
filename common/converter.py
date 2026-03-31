@@ -111,26 +111,26 @@ def parse_args():
     # parser.add_argument("--sumocfg", type=str,
     #                     default='cologne1/cologne1.sumocfg')
 
-    parser.add_argument("--or_sumonet", type=str,
-                        default='cologne3/cologne3.net.xml')
-    parser.add_argument("--cityflownet", type=str,
-                        default='cologne3/cologne3_roadnet_red.json')
-    parser.add_argument("--or_sumotraffic", type=str,
-                        default='cologne3/cologne3.rou.xml')
-    parser.add_argument("--cityflowtraffic", type=str,
-                        default='cologne3/cologne3_flow.json')
-    parser.add_argument("--sumocfg", type=str,
-                        default='cologne3/cologne3.sumocfg')
+    # parser.add_argument("--or_sumonet", type=str,
+    #                     default='cologne3/cologne3.net.xml')
+    # parser.add_argument("--cityflownet", type=str,
+    #                     default='cologne3/cologne3_roadnet_red.json')
+    # parser.add_argument("--or_sumotraffic", type=str,
+    #                     default='cologne3/cologne3.rou.xml')
+    # parser.add_argument("--cityflowtraffic", type=str,
+    #                     default='cologne3/cologne3_flow.json')
+    # parser.add_argument("--sumocfg", type=str,
+    #                     default='cologne3/cologne3.sumocfg')
 
     # cityflow2sumo
-    # parser.add_argument("--or_cityflownet", type=str,
-    #                     default='hangzhou_1x1_bc-tyc_18041610_1h/roadnet.json')
-    # parser.add_argument("--sumonet", type=str,
-    #                     default='hangzhou_1x1_bc-tyc_18041610_1h/hangzhou_1x1_bc-tyc_18041610_1h.net.xml')
-    # parser.add_argument("--or_cityflowtraffic", type=str,
-    #                     default='hangzhou_1x1_bc-tyc_18041610_1h/flow.json')
-    # parser.add_argument("--sumotraffic", type=str,
-    #                     default='hangzhou_1x1_bc-tyc_18041610_1h/hangzhou_1x1_bc-tyc_18041610_1h.rou.xml')
+    parser.add_argument("--or_cityflownet", type=str,
+                        default='hangzhou_1x1_bc-tyc_18041610_1h/roadnet.json')
+    parser.add_argument("--sumonet", type=str,
+                        default='hangzhou_1x1_bc-tyc_18041610_1h/hangzhou_1x1_bc-tyc_18041610_1h.net.xml')
+    parser.add_argument("--or_cityflowtraffic", type=str,
+                        default='hangzhou_1x1_bc-tyc_18041610_1h/flow.json')
+    parser.add_argument("--sumotraffic", type=str,
+                        default='hangzhou_1x1_bc-tyc_18041610_1h/hangzhou_1x1_bc-tyc_18041610_1h.rou.xml')
 
 
 

@@ -285,7 +285,7 @@ class TSCTrainer(BaseTrainer):
         if not drop_load:
             [ag.load_model(self.episodes) for ag in self.agents]
         attention_mat_list = []
-        obs = self.env.reset()
+        obs = self.env.reset(test=True)
         for a in self.agents:
             a.reset()
         for i in range(self.test_steps):
