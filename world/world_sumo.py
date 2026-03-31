@@ -363,6 +363,7 @@ class World(object):
     World Class is mainly used for creating a SUMO engine and maintain information about SUMO world.
     '''
     def __init__(self, sumo_config, placeholder=0, **kwargs):
+        self.map_name = sumo_config.replace("\\", "/").split('/')[-1].split('.')[0]
         if kwargs['interface'] == 'traci':
             self.interface_flag = False
         else:
@@ -560,8 +561,8 @@ class World(object):
 
         cmd = self.sumo_cmd
         if test:
-            folder_name = f"data/raw_data/{self.map}/outputs"
-            cmd = [
+            folder_name = f"data/raw_data/{self.map_name}/outputs"
+            cmd += [
                 "--tripinfo-output", f"{folder_name}/tripinfo.xml",
                 "--tripinfo-output.write-unfinished", "true",
                 "--summary-output", f"{folder_name}/summary.xml",
@@ -572,7 +573,7 @@ class World(object):
                 "--queue-output", f"{folder_name}/queues.xml",
             ]
 
-        traci.start(self.sumo_cmd, label=self.connection_name)
+        traci.start(cmd, label=self.connection_name)
         self.eng = traci.getConnection(self.connection_name)
         self.id2intersection = dict()
         self.intersections = []
