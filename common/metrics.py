@@ -36,9 +36,9 @@ class Metrics(object):
         '''
         if rewards is not None:
             self.lane_metrics['rewards'] += rewards.flatten()
-        if 'delay' in self.lane_metrics.keys():
-            self.lane_metrics['delay'] += (np.stack(np.array(
-                [ag.get_delay() for ag in self.agents], dtype=np.float32))).flatten()
+        # if 'delay' in self.lane_metrics.keys():
+        #     self.lane_metrics['delay'] += (np.stack(np.array(
+        #         [ag.get_delay() for ag in self.agents], dtype=np.float32))).flatten()
         if 'queue' in self.lane_metrics.keys():
             self.lane_metrics['queue'] += (np.stack(np.array(
                 [ag.get_queue() for ag in self.agents], dtype=np.float32))).flatten()
@@ -67,7 +67,7 @@ class Metrics(object):
         # real_delay
         if 'delay' not in self.lane_metrics.keys():
             return self.world.get_real_delay()
-        
+
         # apx_delay
         else:
             try:
@@ -125,7 +125,7 @@ class Metrics(object):
         '''
         result = self.lane_metrics['rewards']
         return np.sum(result) / self.decision_num
-    
+
     def lane_rewards(self):
         '''
         lane_rewards
@@ -136,7 +136,7 @@ class Metrics(object):
         '''
         result = self.lane_metrics['rewards']
         return result / self.decision_num
-    
+
     def throughput(self):
         '''
         throughput
@@ -146,7 +146,7 @@ class Metrics(object):
         :return: current throughput
         '''
         return self.world.get_cur_throughput()
-    
+
     def real_average_travel_time(self):
         '''
         real_average_travel_time
@@ -156,6 +156,3 @@ class Metrics(object):
         :return: average_travel_time
         '''
         return self.world.get_average_travel_time()
-    
-
-    

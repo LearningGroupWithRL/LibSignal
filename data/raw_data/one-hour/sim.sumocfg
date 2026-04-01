@@ -25,18 +25,8 @@
         <device.rerouting.period value="100"/>
     </processing>
 
-    <output>
-        <tripinfo-output value="outputs/tripinfo.xml"/>
-        <tripinfo-output.write-unfinished value="true"/>
-        <summary-output value="outputs/summary.xml"/>
-        <collision-output value="outputs/collisions.xml"/>
-        <statistics-output value="outputs/statistics.xml"/>
-        <deadlock-output value="outputs/deadlocks.xml"/>
-        <queue-output value="outputs/queues.xml"/>
-    </output>
-
     <report>
-        <!-- <no-step-log value="true"/> -->
+        <no-step-log value="true"/>
         <no-warnings value="true"/>
     </report>
 

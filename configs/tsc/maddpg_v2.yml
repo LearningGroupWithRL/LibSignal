@@ -13,7 +13,7 @@ model:
   tau: 0.01
   fc1: 64
   fc2: 64
-  batch_size: 1024
+  batch_size: 256
   gamma: 0.99
   epsilon: 0.5
   epsilon_decay: 0.99
@@ -26,11 +26,11 @@ model:
 trainer:
   thread: 4
   ngpu: 1
-  learning_start: 2000
+  learning_start: 1000
   buffer_size: 10000
   steps: 3600
   test_steps: 3600
-  action_interval: 20
+  action_interval: 10
   episodes: 500
   update_model_rate: 30
   update_target_rate: 30

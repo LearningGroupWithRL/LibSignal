@@ -265,29 +265,36 @@ class Intersection(object):
         full_observation = dict()
         all_vehicles = set()
         for lane in self.lanes:
-            vehicles = []
-            lane_measures = {'lane_waiting_time_count': 0, 'lane_waiting_count': 0, 'lane_count': 0, 'queue_length': 0}
-            lane_vehicles = self._get_vehicles(lane, distance)
-            for v in lane_vehicles:
-                all_vehicles.add(v)
-                if v in self.waiting_times:
-                    self.waiting_times[v] += step_length
-                elif self.eng.vehicle.getWaitingTime(v) > 0:
-                    self.waiting_times[v] = self.eng.vehicle.getWaitingTime(v)
-                v_measures = dict()
-                v_measures['name'] = v
-                v_measures['wait'] = self.waiting_times[v] if v in self.waiting_times else 0
-                #TODO: CHEC ITS RIGHT CALCULATION?
-                lane_measures['queue_length'] = lane_measures['queue_length'] + 1
-                v_measures['speed'] = self.eng.vehicle.getSpeed(v)
-                v_measures['position'] = self.eng.vehicle.getLanePosition(v)
-                vehicles.append(v_measures)
-                if v_measures['wait'] > 0:
-                    lane_measures['lane_waiting_time_count'] += v_measures['wait']
-                    lane_measures['lane_waiting_count'] += 1
-                lane_measures['lane_count'] += 1
-            lane_measures['vehicles'] = vehicles
-            full_observation[lane] = lane_measures
+            full_observation[lane] = {
+                "lane_waiting_time_count": traci.lane.getWaitingTime(lane),
+                "lane_waiting_count": traci.lane.getLastStepHaltingNumber(lane),
+                "lane_count": traci.lane.getLastStepVehicleNumber(lane),
+                "queue_length": traci.lane.getLastStepHaltingNumber(lane),
+            }
+
+            # vehicles = []
+            # lane_measures = {'lane_waiting_time_count': 0, 'lane_waiting_count': 0, 'lane_count': 0, 'queue_length': 0}
+            # lane_vehicles = self._get_vehicles(lane, distance)
+            # for v in lane_vehicles:
+            #     all_vehicles.add(v)
+            #     if v in self.waiting_times:
+            #         self.waiting_times[v] += step_length
+            #     elif self.eng.vehicle.getWaitingTime(v) > 0:
+            #         self.waiting_times[v] = self.eng.vehicle.getWaitingTime(v)
+            #     v_measures = dict()
+            #     v_measures['name'] = v
+            #     v_measures['wait'] = self.waiting_times[v] if v in self.waiting_times else 0
+            #     #TODO: CHEC ITS RIGHT CALCULATION?
+            #     lane_measures['queue_length'] = lane_measures['queue_length'] + 1
+            #     v_measures['speed'] = self.eng.vehicle.getSpeed(v)
+            #     v_measures['position'] = self.eng.vehicle.getLanePosition(v)
+            #     vehicles.append(v_measures)
+            #     if v_measures['wait'] > 0:
+            #         lane_measures['lane_waiting_time_count'] += v_measures['wait']
+            #         lane_measures['lane_waiting_count'] += 1
+            #     lane_measures['lane_count'] += 1
+            # lane_measures['vehicles'] = vehicles
+            # full_observation[lane] = lane_measures
         """
         full_observation['num_vehicles'] = all_vehicles
         if self.last_step_vehicles is None:
@@ -430,6 +437,7 @@ class World(object):
                     #         self.all_lanes.append(lane)
 
         # restart eng
+        self.logged = False
         self.run = 0
         self.inside_vehicles = dict()
         self.vehicles = dict()
@@ -447,19 +455,19 @@ class World(object):
 
         self.info_functions = {
             "vehicles": self.get_vehicles, # TODO check this func
-            "lane_count": self.get_lane_vehicle_count,
-            "lane_waiting_count": self.get_lane_waiting_vehicle_count,
+            "lane_count": self.get_lane_vehicle_count,  # 1
+            "lane_waiting_count": self.get_lane_waiting_vehicle_count,  # 3
             "lane_vehicles": self.get_lane_vehicles,
             "time": self.get_current_time,
             "vehicle_distance": None,
-            "pressure": self.get_pressure,
+            "pressure": self.get_pressure,  # 5
             "lane_pressure": self.get_lane_pressure,
             "lane_waiting_time_count": self.get_lane_waiting_time_count,
-            "lane_delay": self.get_lane_delay,
+            "lane_delay": self.get_lane_delay,  # 4
             "real_delay": self.get_real_delay,
             "vehicle_trajectory": self.get_vehicle_trajectory,
             "history_vehicles": None,
-            "phase": self.get_cur_phase,
+            "phase": self.get_cur_phase,  # 2
             "throughput": self.get_cur_throughput,
             "average_travel_time": None
         }
@@ -531,14 +539,14 @@ class World(object):
         for intsec in self.intersections:
             intsec.observe(self.step_length, self.max_distance)
         # TODO: register vehicles here
-        entering_v = self.eng.simulation.getDepartedIDList()
-        for v in entering_v:
-            self.inside_vehicles.update({v: self.get_current_time()})
-        exiting_v = self.eng.simulation.getArrivedIDList()
-        for v in exiting_v:
-            self.vehicles.update({v: self.get_current_time() - self.inside_vehicles[v]})
+        # entering_v = self.eng.simulation.getDepartedIDList()
+        # for v in entering_v:
+        #     self.inside_vehicles.update({v: self.get_current_time()})
+        # exiting_v = self.eng.simulation.getArrivedIDList()
+        # for v in exiting_v:
+        #     self.vehicles.update({v: self.get_current_time() - self.inside_vehicles[v]})
         self._update_infos()
-        self.vehicle_trajectory, self.vehicle_maxspeed = self.get_vehicle_trajectory()
+        # self.vehicle_trajectory, self.vehicle_maxspeed = self.get_vehicle_trajectory()
         self.run += 1
 
     def stop(self):
@@ -564,7 +572,6 @@ class World(object):
             folder_name = f"data/raw_data/{self.map_name}/outputs"
             cmd += [
                 "--tripinfo-output", f"{folder_name}/tripinfo.xml",
-                "--tripinfo-output.write-unfinished", "true",
                 "--summary-output", f"{folder_name}/summary.xml",
                 "--collision-output", f"{folder_name}/collisions.xml",
                 "--statistics-output", f"{folder_name}/statistics.xml",
@@ -825,21 +832,33 @@ class World(object):
         '''
         # the delay of each lane: 1 - lane_avg_speed/speed_limit
         # set speed limit to 11.11 by default
-        lane_vehicles = self.get_lane_vehicles()
-        lane_delay = dict()
-        for key in lane_vehicles.keys():
-            vehicles = lane_vehicles[key]['vehicles']
-            lane_vehicle_count = len(vehicles)
-            lane_avg_speed = 0.0
-            speed_limit = self.eng.lane.getMaxSpeed(key)
-            for vehicle in vehicles:
-                speed = vehicle['speed']
-                lane_avg_speed += speed
-            if lane_vehicle_count == 0:
-                lane_avg_speed = speed_limit
-            else:
-                lane_avg_speed /= lane_vehicle_count
-            lane_delay[key] = 1 - lane_avg_speed / speed_limit
+
+        lane_delay = {}
+        for inter in self.intersections:
+            for key in inter.full_observation.keys():
+                vehicle_count = inter.full_observation[key]['lane_count']
+                lane_speed_limit = self.eng.lane.getMaxSpeed(key)
+                if vehicle_count:
+                    avg_speed = traci.lane.getLastStepMeanSpeed(key)
+                    lane_delay[key] = 1 - avg_speed / lane_speed_limit
+                else:
+                    lane_delay[key] = 0
+
+        # lane_vehicles = self.get_lane_vehicles()
+        # lane_delay = dict()
+        # for key in lane_vehicles.keys():
+        #     vehicles = lane_vehicles[key]['vehicles']
+        #     lane_vehicle_count = len(vehicles)
+        #     lane_avg_speed = 0.0
+        #     speed_limit = self.eng.lane.getMaxSpeed(key)
+        #     for vehicle in vehicles:
+        #         speed = vehicle['speed']
+        #         lane_avg_speed += speed
+        #     if lane_vehicle_count == 0:
+        #         lane_avg_speed = speed_limit
+        #     else:
+        #         lane_avg_speed /= lane_vehicle_count
+        #     lane_delay[key] = 1 - lane_avg_speed / speed_limit
         return lane_delay
 
     # def get_plan_depart_time(self):

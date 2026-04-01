@@ -1,5 +1,7 @@
 import os
 import numpy as np
+import traci
+from tqdm import tqdm
 from common.metrics import Metrics
 from environment import TSCEnv
 from common.registry import Registry
@@ -76,12 +78,8 @@ class TSCTrainer(BaseTrainer):
         :param: None
         :return: None
         '''
-        if Registry.mapping['command_mapping']['setting'].param['delay_type'] == 'apx':
-            lane_metrics = ['rewards', 'queue', 'delay']
-            world_metrics = ['real avg travel time', 'throughput']
-        else:
-            lane_metrics = ['rewards', 'queue']
-            world_metrics = ['delay', 'real avg travel time', 'throughput']
+        lane_metrics = ['rewards', 'queue']
+        world_metrics = ['real avg travel time', 'throughput']
         self.metric = Metrics(lane_metrics, world_metrics, self.world, self.agents)
 
     def create_agents(self):
@@ -94,7 +92,7 @@ class TSCTrainer(BaseTrainer):
         '''
         self.agents = []
         agent = Registry.mapping['model_mapping'][Registry.mapping['command_mapping']['setting'].param['agent']](self.world, 0)
-        print(agent)
+        print(f"{agent = }")
         num_agent = int(len(self.world.intersections) / agent.sub_agents)
         self.agents.append(agent)  # initialized N agents for traffic light control
         for i in range(1, num_agent):
@@ -118,24 +116,17 @@ class TSCTrainer(BaseTrainer):
 
     def write_metric_headers(self):
         with open(self.training_metrics_file, 'w') as f:
-            headers = ['episode', 'rewards', 'real_avg_travel_time', 'queue', 'delay', 'throughput']
-            f.write(', '.join(headers) + '\n')
+            headers = ['episode', 'rewards', 'queue']
+            f.write(','.join(headers) + '\n')
 
         with open(self.test_metrics_file, 'w') as f:
-            headers = ['episode', 'rewards', 'real_avg_travel_time', 'queue', 'delay', 'throughput']
-            f.write(', '.join(headers) + '\n')
+            headers = ['episode', 'rewards', 'queue']
+            f.write(','.join(headers) + '\n')
 
     def save_metrics(self, episode: int, test: bool = False):
         file = self.test_metrics_file if test else self.training_metrics_file
         with open(file, 'a') as f:
-            f.write(
-                f"{episode}, "
-                f"{self.metric.rewards()}, "
-                f"{self.metric.real_average_travel_time()}, "
-                f"{self.metric.queue()}, "
-                f"{self.metric.delay()}, "
-                f"{self.metric.throughput()}\n"
-            )
+            f.write(f"{episode},{self.metric.rewards()},{self.metric.queue()}\n")
 
     def train(self):
         '''
@@ -147,7 +138,7 @@ class TSCTrainer(BaseTrainer):
         '''
         total_decision_num = 0
         flush = 0
-        for e in range(self.episodes):
+        for e in tqdm(range(self.episodes)):
             # TODO: check this reset agent
             self.metric.clear()
             last_obs = self.env.reset()  # agent * [sub_agent, feature]
@@ -163,7 +154,6 @@ class TSCTrainer(BaseTrainer):
             episode_loss = []
             i = 0
             while i < self.steps:
-                print(f"Episode {e}, Step {i}/{self.steps}", end='\r')
                 if i % self.action_interval == 0:
                     last_phase = np.stack([ag.get_phase() for ag in self.agents])  # [agent, intersections]
 
@@ -179,12 +169,16 @@ class TSCTrainer(BaseTrainer):
                     for idx, ag in enumerate(self.agents):
                         actions_prob.append(ag.get_action_prob(last_obs[idx], last_phase[idx]))
 
-                    rewards_list = []
-                    for _ in range(self.action_interval):
+                    for s in range(self.action_interval):
+                        if s < self.action_interval - 1:
+                            traci.simulationStep()
+                            i += 1
+                            continue
+
                         obs, rewards, dones, _ = self.env.step(actions.flatten())
                         i += 1
-                        rewards_list.append(np.stack(rewards))
-                    rewards = np.mean(rewards_list, axis=0)  # [agent, intersection]
+
+                    rewards = np.array(rewards)  # [agent, intersection]
                     self.metric.update(rewards)
 
                     cur_phase = np.stack([ag.get_phase() for ag in self.agents])
@@ -201,7 +195,6 @@ class TSCTrainer(BaseTrainer):
                         total_decision_num % self.update_model_rate == self.update_model_rate - 1:
 
                     cur_loss_q = np.stack([ag.train() for ag in self.agents])  # TODO: training
-
                     episode_loss.append(cur_loss_q)
                 if total_decision_num > self.learning_start and \
                         total_decision_num % self.update_target_rate == self.update_target_rate - 1:
@@ -209,24 +202,22 @@ class TSCTrainer(BaseTrainer):
 
                 if all(dones):
                     break
+
             if len(episode_loss) > 0:
                 mean_loss = np.mean(np.array(episode_loss))
             else:
                 mean_loss = 0
 
             self.save_metrics(e, test=False)
-            self.writeLog("TRAIN", e, self.metric.real_average_travel_time(),\
-                mean_loss, self.metric.rewards(), self.metric.queue(), self.metric.delay(), self.metric.throughput())
-            self.logger.info("step:{}/{}, q_loss:{}, rewards:{}, queue:{}, delay:{}, throughput:{}".format(i, self.steps,\
-                mean_loss, self.metric.rewards(), self.metric.queue(), self.metric.delay(), int(self.metric.throughput())))
+            self.writeLog("TRAIN", e, mean_loss, self.metric.rewards(), self.metric.queue())
+            # self.logger.info("episode:{}/{}, q_loss:{}, rewards:{}, queue:{}".format(e + 1, self.episodes, mean_loss, self.metric.rewards(), self.metric.queue()))
+
             if e % self.save_rate == 0:
                 [ag.save_model(e=e) for ag in self.agents]
-            self.logger.info("episode:{}/{}, real avg travel time:{}".format(e, self.episodes, self.metric.real_average_travel_time()))
-            for j in range(len(self.world.intersections)):
-                self.logger.debug("intersection:{}, mean_episode_reward:{}, mean_queue:{}".format(j, self.metric.lane_rewards()[j],\
-                     self.metric.lane_queue()[j]))
+
             if self.test_when_train and e % 20 == 0:
                 self.train_test(e)
+
         # self.dataset.flush([ag.replay_buffer for ag in self.agents])
         [ag.save_model(e=self.episodes) for ag in self.agents]
         self.env.close()
@@ -250,22 +241,25 @@ class TSCTrainer(BaseTrainer):
                 for idx, ag in enumerate(self.agents):
                     actions.append(ag.get_action(obs[idx], phases[idx], test=True))
                 actions = np.stack(actions)
-                rewards_list = []
-                for _ in range(self.action_interval):
+
+                for s in range(self.action_interval):
+                    if s < self.action_interval - 1:
+                        traci.simulationStep()
+                        i += 1
+                        continue
+
                     obs, rewards, dones, _ = self.env.step(actions.flatten())  # make sure action is [intersection]
                     i += 1
-                    rewards_list.append(np.stack(rewards))
-                rewards = np.mean(rewards_list, axis=0)  # [agent, intersection]
+
+                rewards = np.array(rewards)  # [agent, intersection]
                 self.metric.update(rewards)
+
             if all(dones):
                 break
-        self.logger.info("Test step:{}/{}, travel time :{}, rewards:{}, queue:{}, delay:{}, throughput:{}".format(\
-            e, self.episodes, self.metric.real_average_travel_time(), self.metric.rewards(),\
-            self.metric.queue(), self.metric.delay(), int(self.metric.throughput())))
-        self.writeLog("TEST", e, self.metric.real_average_travel_time(),\
-            100, self.metric.rewards(),self.metric.queue(),self.metric.delay(), self.metric.throughput())
+
+        # self.logger.info("Test step:{}/{}, rewards:{}, queue:{}".format(e, self.episodes, self.metric.rewards(), self.metric.queue()))
+        self.writeLog("TEST", e, 0, self.metric.rewards(),self.metric.queue())
         self.save_metrics(e, test=True)
-        return self.metric.real_average_travel_time()
 
     def test(self, drop_load=True):
         '''
@@ -295,21 +289,27 @@ class TSCTrainer(BaseTrainer):
                 for idx, ag in enumerate(self.agents):
                     actions.append(ag.get_action(obs[idx], phases[idx], test=True))
                 actions = np.stack(actions)
-                rewards_list = []
-                for j in range(self.action_interval):
+
+                for s in range(self.action_interval):
+                    if s < self.action_interval - 1:
+                        traci.simulationStep()
+                        i += 1
+                        continue
+
                     obs, rewards, dones, _ = self.env.step(actions.flatten())
                     i += 1
-                    rewards_list.append(np.stack(rewards))
-                rewards = np.mean(rewards_list, axis=0)  # [agent, intersection]
+
+                rewards = np.array(rewards)  # [agent, intersection]
                 self.metric.update(rewards)
+
             if all(dones):
                 break
-        self.logger.info("Final Travel Time is %.4f, mean rewards: %.4f, queue: %.4f, delay: %.4f, throughput: %d" % (self.metric.real_average_travel_time(), \
-            self.metric.rewards(), self.metric.queue(), self.metric.delay(), self.metric.throughput()))
+
         self.save_metrics(1, test=True)
+        self.env.close()
         return self.metric
 
-    def writeLog(self, mode, step, travel_time, loss, cur_rwd, cur_queue, cur_delay, cur_throughput):
+    def writeLog(self, mode, step, loss, cur_rwd, cur_queue):
         '''
         writeLog
         Write log for record and debug.
@@ -325,8 +325,7 @@ class TSCTrainer(BaseTrainer):
         :return: None
         '''
         res = Registry.mapping['model_mapping']['setting'].param['name'] + '\t' + mode + '\t' + str(
-            step) + '\t' + "%.1f" % travel_time + '\t' + "%.1f" % loss + "\t" +\
-            "%.2f" % cur_rwd + "\t" + "%.2f" % cur_queue + "\t" + "%.2f" % cur_delay + "\t" + "%d" % cur_throughput
+            step) + '\t' + "%.1f" % loss + "\t" + "%.2f" % cur_rwd + "\t" + "%.2f" % cur_queue
         log_handle = open(self.log_file, "a")
         log_handle.write(res + "\n")
         log_handle.close()
