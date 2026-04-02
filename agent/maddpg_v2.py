@@ -100,12 +100,10 @@ class MADDPGAgent(RLAgent):
         return np.stack(self.prob)
 
     def save_model(self, e=""):
-        print('... saving checkpoint ...')
         for agent in self.agents:
             agent.save_models()
 
     def load_model(self, e=""):
-        print('... loading checkpoint ...')
         for agent in self.agents:
             agent.load_models()
 
