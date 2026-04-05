@@ -552,7 +552,7 @@ class World(object):
     def stop(self):
         traci.close()
 
-    def reset(self, test=False, **kwargs):
+    def reset(self, test=None):
         '''
         reset
         reset information, including vehicles, vehicle_trajectory, etc.
@@ -569,7 +569,9 @@ class World(object):
 
         cmd = self.sumo_cmd
         if test:
-            folder_name = f"data/raw_data/{self.map_name}/outputs"
+            folder_name = f"data/raw_data/{self.map_name}/outputs/{test}"
+            os.makedirs(folder_name, exist_ok=True)
+
             cmd += [
                 "--tripinfo-output", f"{folder_name}/tripinfo.xml",
                 "--summary-output", f"{folder_name}/summary.xml",

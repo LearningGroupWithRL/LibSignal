@@ -26,6 +26,8 @@ class TSCTrainer(BaseTrainer):
             cpu=cpu,
             name=name
         )
+
+        self.agent_type = Registry.mapping['command_mapping']['setting'].param['agent']
         self.episodes = Registry.mapping['trainer_mapping']['setting'].param['episodes']
         self.steps = Registry.mapping['trainer_mapping']['setting'].param['steps']
         self.test_steps = Registry.mapping['trainer_mapping']['setting'].param['test_steps']
@@ -279,7 +281,7 @@ class TSCTrainer(BaseTrainer):
         if not drop_load:
             [ag.load_model(self.episodes) for ag in self.agents]
         attention_mat_list = []
-        obs = self.env.reset(test=True)
+        obs = self.env.reset(test=self.agent_type)
         for a in self.agents:
             a.reset()
         for i in range(self.test_steps):
