@@ -2,7 +2,7 @@
 <configuration>
 	<input>
 		<net-file value="sim.net.xml"/>
-		<route-files value="sim.rou.xml"/>
+		<route-files value="trips.rou.xml"/>
 	</input>
 	<time>
 		<begin value="0"/>
