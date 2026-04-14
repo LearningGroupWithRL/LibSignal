@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+
+    <!-- ==================== ROW A ==================== -->
+    <node id="A0" x="290.13" y="284.64" type="traffic_light" radius="5"/>
+    <node id="A1" x="638.45" y="281.19" type="traffic_light" radius="5"/>
+    <node id="A2" x="962.01" y="294.09" type="traffic_light" radius="5"/>
+    <node id="A3" x="1265.25" y="300.33" type="traffic_light" radius="5"/>
+    <node id="A4" x="1594.1" y="297.08" type="traffic_light" radius="5"/>
+    <node id="A5" x="1925.91" y="281.99" type="traffic_light" radius="5"/>
+    <node id="A6" x="2275.77" y="314.38" type="traffic_light" radius="5"/>
+    <node id="A7" x="2588.93" y="287.82" type="traffic_light" radius="5"/>
+
+    <!-- ==================== ROW B ==================== -->
+    <node id="B0" x="307.14" y="629.7" type="traffic_light" radius="5"/>
+    <node id="B1" x="634.32" y="605.45" type="traffic_light" radius="5"/>
+    <node id="B2" x="986.67" y="590.05" type="traffic_light" radius="5"/>
+    <node id="B3" x="1310.07" y="600.74" type="traffic_light" radius="5"/>
+    <node id="B4" x="1600.08" y="593.18" type="traffic_light" radius="5"/>
+    <node id="B5" x="1939.27" y="623.91" type="traffic_light" radius="5"/>
+    <node id="B6" x="2262.12" y="613.59" type="traffic_light" radius="5"/>
+    <node id="B7" x="2617.78" y="604.39" type="traffic_light" radius="5"/>
+
+    <!-- ==================== ROW C ==================== -->
+    <node id="C0" x="302.67" y="900.76" type="traffic_light" radius="5"/>
+    <node id="C1" x="605.34" y="907.06" type="traffic_light" radius="5"/>
+    <node id="C2" x="970.1" y="916.81" type="traffic_light" radius="5"/>
+    <node id="C3" x="1300" y="900" type="traffic_light" radius="5"/>
+    <node id="C4" x="1600" y="900" type="traffic_light" radius="5"/>
+    <node id="C5" x="2000" y="900" type="traffic_light" radius="5"/>
+    <node id="C6" x="2269.59" y="923.76" type="traffic_light" radius="5"/>
+    <node id="C7" x="2607.38" y="911.19" type="traffic_light" radius="5"/>
+
+    <!-- ==================== ROW D ==================== -->
+    <node id="D0" x="316.49" y="1238.76" type="traffic_light" radius="5"/>
+    <node id="D1" x="615.67" y="1233.27" type="traffic_light" radius="5"/>
+    <node id="D2" x="961.41" y="1246.51" type="traffic_light" radius="5"/>
+    <node id="D3" x="1300" y="1200" type="traffic_light" radius="5"/>
+    <node id="D4" x="1600" y="1200" type="traffic_light" radius="5"/>
+    <node id="D5" x="2000" y="1200" type="traffic_light" radius="5"/>
+    <node id="D6" x="2292.85" y="1220.67" type="traffic_light" radius="5"/>
+    <node id="D7" x="2636.89" y="1213.19" type="traffic_light" radius="5"/>
+
+    <!-- ==================== ROW E ==================== -->
+    <node id="E0" x="295.41" y="1551.31" type="traffic_light" radius="5"/>
+    <node id="E1" x="610.51" y="1539.51" type="traffic_light" radius="5"/>
+    <node id="E2" x="934.2" y="1547.4" type="traffic_light" radius="5"/>
+    <node id="E3" x="1300" y="1500" type="traffic_light" radius="5"/>
+    <node id="E4" x="1600" y="1500" type="traffic_light" radius="5"/>
+    <node id="E5" x="2000" y="1500" type="traffic_light" radius="5"/>
+    <node id="E6" x="2294.82" y="1543.21" type="traffic_light" radius="5"/>
+    <node id="E7" x="2631.03" y="1531.8" type="traffic_light" radius="5"/>
+
+    <!-- ==================== ROW F ==================== -->
+    <node id="F0" x="310.94" y="1854.15" type="traffic_light" radius="5"/>
+    <node id="F1" x="634.47" y="1848.07" type="traffic_light" radius="5"/>
+    <node id="F2" x="979.04" y="1869.57" type="traffic_light" radius="5"/>
+    <node id="F3" x="1288.55" y="1857.22" type="traffic_light" radius="5"/>
+    <node id="F4" x="1595.4" y="1858.87" type="traffic_light" radius="5"/>
+    <node id="F5" x="1958.24" y="1871.7" type="traffic_light" radius="5"/>
+    <node id="F6" x="2298.03" y="1840.52" type="traffic_light" radius="5"/>
+    <node id="F7" x="2603.6" y="1857.42" type="traffic_light" radius="5"/>
+
+    <!-- ==================== ROW G ==================== -->
+    <node id="G0" x="273.26" y="2158.31" type="traffic_light" radius="5"/>
+    <node id="G1" x="611.41" y="2143.15" type="traffic_light" radius="5"/>
+    <node id="G2" x="935.3" y="2171.8" type="traffic_light" radius="5"/>
+    <node id="G3" x="1269.24" y="2148.9" type="traffic_light" radius="5"/>
+    <node id="G4" x="1613.89" y="2176.34" type="traffic_light" radius="5"/>
+    <node id="G5" x="1926.51" y="2157.76" type="traffic_light" radius="5"/>
+    <node id="G6" x="2282.77" y="2176.87" type="traffic_light" radius="5"/>
+    <node id="G7" x="2627.88" y="2176.02" type="traffic_light" radius="5"/>
+
+    <!-- ==================== FRINGE NODES ==================== -->
+
+    <!-- bottom -->
+    <node id="bottom0" x="291.14" y="9.14" type="priority" radius="5"/>
+    <node id="bottom1" x="624.35" y="19.45" type="priority" radius="5"/>
+    <node id="bottom2" x="978.31" y="3.32" type="priority" radius="5"/>
+    <node id="bottom3" x="1277.05" y="5.1" type="priority" radius="5"/>
+    <node id="bottom4" x="1609.33" y="10.67" type="priority" radius="5"/>
+    <node id="bottom5" x="1953.56" y="5.78" type="priority" radius="5"/>
+    <node id="bottom6" x="2260.16" y="9.22" type="priority" radius="5"/>
+    <node id="bottom7" x="2604.77" y="12.46" type="priority" radius="5"/>
+
+    <!-- top -->
+    <node id="top0" x="318.12" y="2475.71" type="priority" radius="5"/>
+    <node id="top1" x="630.62" y="2473.53" type="priority" radius="5"/>
+    <node id="top2" x="967.05" y="2456.62" type="priority" radius="5"/>
+    <node id="top3" x="1305.98" y="2478.4" type="priority" radius="5"/>
+    <node id="top4" x="1634.98" y="2478.94" type="priority" radius="5"/>
+    <node id="top5" x="1945.7" y="2466.97" type="priority" radius="5"/>
+    <node id="top6" x="2264.14" y="2474.03" type="priority" radius="5"/>
+    <node id="top7" x="2592.49" y="2457.02" type="priority" radius="5"/>
+
+    <!-- left -->
+    <node id="left0" x="3.13" y="289.87" type="priority" radius="5"/>
+    <node id="left1" x="5.1" y="596.58" type="priority" radius="5"/>
+    <node id="left2" x="0.0" y="909.54" type="priority" radius="5"/>
+    <node id="left3" x="1.52" y="1225.91" type="priority" radius="5"/>
+    <node id="left4" x="0.38" y="1551.23" type="priority" radius="5"/>
+    <node id="left5" x="9.21" y="1839.46" type="priority" radius="5"/>
+    <node id="left6" x="3.78" y="2155.42" type="priority" radius="5"/>
+
+    <!-- right -->
+    <node id="right0" x="2935.92" y="288.69" type="priority" radius="5"/>
+    <node id="right1" x="2950.47" y="624.79" type="priority" radius="5"/>
+    <node id="right2" x="2938.98" y="919.52" type="priority" radius="5"/>
+    <node id="right3" x="2927.58" y="1218.07" type="priority" radius="5"/>
+    <node id="right4" x="2935.28" y="1532.94" type="priority" radius="5"/>
+    <node id="right5" x="2949.87" y="1839.84" type="priority" radius="5"/>
+    <node id="right6" x="2925.69" y="2173.53" type="priority" radius="5"/>
+
+</nodes>

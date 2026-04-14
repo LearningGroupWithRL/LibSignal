@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/types_file.xsd">
+
+    <type id="arterial_6" priority="15" numLanes="6" speed="16.67" width="3.5" sidewalkWidth="5"/>
+    <type id="arterial_5" priority="14" numLanes="5" speed="16.67" width="3.5" sidewalkWidth="5"/>
+    <type id="arterial_4" priority="13" numLanes="4" speed="13.88" width="3.5" sidewalkWidth="5"/>
+    <type id="arterial_3" priority="12" numLanes="3" speed="13.88" width="3.5" sidewalkWidth="5"/>
+    <type id="onewayroad" priority="11" numLanes="2" speed="11.11" width="3.5" sidewalkWidth="3"/>
+
+</types>

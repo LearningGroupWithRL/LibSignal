@@ -24,7 +24,7 @@ parser.add_argument('--delay_type', type=str, default="apx", choices=['apx','rea
 parser.add_argument('-t', '--task', type=str, default="tsc", help="task type to run")
 parser.add_argument('-a', '--agent', type=str, default="presslight", help="agent type of agents in RL environment")
 parser.add_argument('-w', '--world', type=str, default="sumo", choices=['cityflow','sumo'], help="simulator type")
-parser.add_argument('-n', '--network', type=str, default="one-hour", help="network name")
+parser.add_argument('-n', '--network', type=str, default="large", help="network name")
 parser.add_argument('-d', '--dataset', type=str, default='onfly', help='type of dataset in training process')
 
 args = parser.parse_args()
