@@ -239,15 +239,19 @@ class MADDPG_SUBAgent(object):
         self.fc2 = Registry.mapping['model_mapping']['setting'].param['fc2']
         self.chkpt_dir = Registry.mapping['logger_mapping']['path'].path
 
+        self.max_actions = max([len(self.world.id2intersection[inter_id].phases) for inter_id in self.world.id2intersection])
+        self.n_actions = self.action_space.n
+
     def create_model(self, obs_dim, actions_dim):
         # use global information from all agents to create critic
+        max_action_dim = self.max_actions * len(self.world.id2intersection)
         self.actor = ActorNetwork(self.alpha, self.ob_length, self.fc1, self.fc2,
-                                  self.action_space.n, self.inter + '_actor', self.chkpt_dir)
-        self.critic = CriticNetwork(self.beta, obs_dim, self.fc1, self.fc2, actions_dim,
+                                  self.max_actions, self.inter + '_actor', self.chkpt_dir)
+        self.critic = CriticNetwork(self.beta, obs_dim, self.fc1, self.fc2, max_action_dim,
                                     self.inter + '_critic', self.chkpt_dir)
         self.target_actor = ActorNetwork(self.alpha, self.ob_length, self.fc1, self.fc2,
-                                         self.action_space.n, self.inter + '_target_actor', self.chkpt_dir)
-        self.target_critic = CriticNetwork(self.beta, obs_dim, self.fc1, self.fc2, actions_dim,
+                                         self.max_actions, self.inter + '_target_actor', self.chkpt_dir)
+        self.target_critic = CriticNetwork(self.beta, obs_dim, self.fc1, self.fc2, max_action_dim,
                                            self.inter + '_target_critic', self.chkpt_dir)
 
         self.update_network_parameters(tau=1)
@@ -274,7 +278,26 @@ class MADDPG_SUBAgent(object):
         state = torch.tensor(observation[np.newaxis], dtype=torch.float32)
         actions = self.actor.forward(state)
         actions = actions.detach().cpu().numpy()[0]
+
+        # Mask invalid actions
+        mask = np.zeros(self.max_actions)
+        mask[:self.n_actions] = 1
+        actions = actions * mask
+
+        if not test:
+            # Add exploration noise only to valid actions
+            noise = np.random.randn(self.max_actions) * self.epsilon
+            actions = actions + (noise * mask)
+
+        # Renormalize probabilities for valid actions only
+        if mask.sum() > 0:
+            actions[:self.n_actions] = self._softmax(actions[:self.n_actions])
+
         return actions
+
+    def _softmax(self, x):
+        e_x = np.exp(x - np.max(x))
+        return e_x / e_x.sum()
 
     def update_network_parameters(self, tau=None):
         if tau is None:

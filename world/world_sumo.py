@@ -506,7 +506,7 @@ class World(object):
             green_phases = []
             for phase in valid_phases[ts]:     # Convert to SUMO phase type
                 if 'y' not in phase:
-                    if phase.count('r') + phase.count('s') != len(phase):
+                    if phase.count('r') + phase.count('s') + phase.count('g') != len(phase):
                         green_phases.append(self.eng.trafficlight.Phase(self.step_length, phase))
             valid_phases[ts] = green_phases
         return valid_phases

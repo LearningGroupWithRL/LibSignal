@@ -29,7 +29,7 @@ trainer:
   episodes: 500
   update_model_rate: 1
   update_target_rate: 10
-  test_when_train: True
+  test_when_train: False
 
 model:
   name: "non-rl"
