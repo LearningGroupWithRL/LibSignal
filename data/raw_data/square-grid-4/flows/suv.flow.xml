@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="suv" vClass="passenger" length="5.0" width="2.0" height="1.8" accel="2.2" decel="4.0" sigma="0.5" speedFactor="0.95" speedDev="0.1" color="0.3,0.3,0.6" />
+    <flow id="suv_bottom0A0" type="suv" from="bottom0A0" begin="0" end="3600" probability="0.0403" />
+    <flow id="suv_bottom1A1" type="suv" from="bottom1A1" begin="0" end="3600" probability="0.0425" />
+    <flow id="suv_bottom2A2" type="suv" from="bottom2A2" begin="0" end="3600" probability="0.0439" />
+    <flow id="suv_bottom3A3" type="suv" from="bottom3A3" begin="0" end="3600" probability="0.039" />
+    <flow id="suv_left0A0" type="suv" from="left0A0" begin="0" end="3600" probability="0.0438" />
+    <flow id="suv_left1B0" type="suv" from="left1B0" begin="0" end="3600" probability="0.0432" />
+    <flow id="suv_left2C0" type="suv" from="left2C0" begin="0" end="3600" probability="0.041" />
+    <flow id="suv_left3D0" type="suv" from="left3D0" begin="0" end="3600" probability="0.0399" />
+    <flow id="suv_right0A3" type="suv" from="right0A3" begin="0" end="3600" probability="0.0447" />
+    <flow id="suv_right1B3" type="suv" from="right1B3" begin="0" end="3600" probability="0.041" />
+    <flow id="suv_right2C3" type="suv" from="right2C3" begin="0" end="3600" probability="0.0396" />
+    <flow id="suv_right3D3" type="suv" from="right3D3" begin="0" end="3600" probability="0.0396" />
+    <flow id="suv_top0D0" type="suv" from="top0D0" begin="0" end="3600" probability="0.0441" />
+    <flow id="suv_top1D1" type="suv" from="top1D1" begin="0" end="3600" probability="0.0426" />
+    <flow id="suv_top2D2" type="suv" from="top2D2" begin="0" end="3600" probability="0.0438" />
+    <flow id="suv_top3D3" type="suv" from="top3D3" begin="0" end="3600" probability="0.0434" />
+</routes>

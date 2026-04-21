@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <node id="A0" x="511.15" y="462.0" type="traffic_light" />
+    <node id="A1" x="882.0" y="477.86" type="traffic_light" />
+    <node id="A2" x="1318.92" y="514.14" type="traffic_light" />
+    <node id="B0" x="531.37" y="866.96" type="traffic_light" />
+    <node id="B1" x="893.75" y="862.38" type="traffic_light" />
+    <node id="B2" x="1277.49" y="900.43" type="traffic_light" />
+    <node id="C0" x="462.12" y="1275.91" type="traffic_light" />
+    <node id="C1" x="911.99" y="1303.6" type="traffic_light" />
+    <node id="C2" x="1277.64" y="1307.14" type="traffic_light" />
+    <node id="top0" x="506.19" y="1690.13" type="priority" />
+    <node id="top1" x="906.12" y="1703.96" type="priority" />
+    <node id="top2" x="1296.81" y="1693.11" type="priority" />
+    <node id="bottom0" x="509.14" y="96.73" type="priority" />
+    <node id="bottom1" x="891.85" y="91.93" type="priority" />
+    <node id="bottom2" x="1306.95" y="102.07" type="priority" />
+    <node id="left0" x="106.14" y="504.59" type="priority" />
+    <node id="left1" x="100.72" y="909.46" type="priority" />
+    <node id="left2" x="97.57" y="1301.04" type="priority" />
+    <node id="right0" x="1706.59" y="502.37" type="priority" />
+    <node id="right1" x="1707.23" y="901.55" type="priority" />
+    <node id="right2" x="1704.09" y="1290.92" type="priority" />
+</nodes>

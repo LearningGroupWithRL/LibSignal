@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-04-03T15:31:06.823767+08:00 by Eclipse SUMO jtrrouter 1.25.0
+<jtrrouterConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/jtrrouterConfiguration.xsd">
+
+    <input>
+        <net-file value="network/sim.net.xml"/>
+        <route-files value="flows/ambulance.flow.xml"/>
+        <turn-ratio-files value="turn.ratio.xml"/>
+    </input>
+
+    <output>
+        <output-file value="routes/ambulance.rou.xml"/>
+    </output>
+
+    <processing>
+        <sink-edges value="A0bottom0,A1bottom1,A2bottom2,C0top0,C1top1,C2top2,A0left0,B0left1,C0left2,A2right0,B2right1,C2right2"/>
+    </processing>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+    </time>
+
+    <random_number>
+        <seed value="1"/>
+    </random_number>
+
+</jtrrouterConfiguration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="ambulance" length="6.00" speedFactor="normc(1.20,0.05,0.20,2.00)" vClass="emergency" width="2.30" height="2.50" color="white" accel="3.0" decel="5.0" sigma="0.2"/>
+    <vehicle id="ambulance_bottom0A0.0" type="ambulance" depart="4.00">
+        <route edges="bottom0A0 A0left0"/>
+    </vehicle>
+    <vehicle id="ambulance_left0A0.0" type="ambulance" depart="79.00">
+        <route edges="left0A0 A0bottom0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom2A2.0" type="ambulance" depart="100.00">
+        <route edges="bottom2A2 A2B2 B2C2 C2top2"/>
+    </vehicle>
+    <vehicle id="ambulance_right2C2.0" type="ambulance" depart="115.00">
+        <route edges="right2C2 C2top2"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.1" type="ambulance" depart="272.00">
+        <route edges="bottom0A0 A0left0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.2" type="ambulance" depart="351.00">
+        <route edges="bottom0A0 A0B0 B0C0 C0C1 C1C2 C2right2"/>
+    </vehicle>
+    <vehicle id="ambulance_left0A0.1" type="ambulance" depart="394.00">
+        <route edges="left0A0 A0bottom0"/>
+    </vehicle>
+    <vehicle id="ambulance_left2C0.0" type="ambulance" depart="409.00">
+        <route edges="left2C0 C0C1 C1C2 C2right2"/>
+    </vehicle>
+    <vehicle id="ambulance_right1B2.0" type="ambulance" depart="482.00">
+        <route edges="right1B2 B2B1 B1B0 B0left1"/>
+    </vehicle>
+    <vehicle id="ambulance_top0C0.0" type="ambulance" depart="492.00">
+        <route edges="top0C0 C0B0 B0B1 B1B0 B0left1"/>
+    </vehicle>
+    <vehicle id="ambulance_top0C0.1" type="ambulance" depart="509.00">
+        <route edges="top0C0 C0left2"/>
+    </vehicle>
+    <vehicle id="ambulance_top2C2.0" type="ambulance" depart="585.00">
+        <route edges="top2C2 C2B2 B2right1"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.3" type="ambulance" depart="666.00">
+        <route edges="bottom0A0 A0B0 B0B1 B1B2 B2B1 B1B0 B0left1"/>
+    </vehicle>
+    <vehicle id="ambulance_left0A0.2" type="ambulance" depart="698.00">
+        <route edges="left0A0 A0A1 A1A2 A2right0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.4" type="ambulance" depart="801.00">
+        <route edges="bottom0A0 A0B0 B0C0 C0top0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom1A1.0" type="ambulance" depart="857.00">
+        <route edges="bottom1A1 A1A2 A2right0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom1A1.1" type="ambulance" depart="905.00">
+        <route edges="bottom1A1 A1A0 A0bottom0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom2A2.1" type="ambulance" depart="961.00">
+        <route edges="bottom2A2 A2B2 B2C2 C2C1 C1C0 C0left2"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom2A2.2" type="ambulance" depart="1068.00">
+        <route edges="bottom2A2 A2B2 B2C2 C2top2"/>
+    </vehicle>
+    <vehicle id="ambulance_right0A2.0" type="ambulance" depart="1327.00">
+        <route edges="right0A2 A2A1 A1A0 A0left0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.5" type="ambulance" depart="1530.00">
+        <route edges="bottom0A0 A0B0 B0C0 C0top0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom2A2.3" type="ambulance" depart="1668.00">
+        <route edges="bottom2A2 A2B2 B2C2 C2top2"/>
+    </vehicle>
+    <vehicle id="ambulance_right2C2.1" type="ambulance" depart="1681.00">
+        <route edges="right2C2 C2C1 C1C0 C0left2"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom2A2.4" type="ambulance" depart="1747.00">
+        <route edges="bottom2A2 A2A1 A1B1 B1C1 C1top1"/>
+    </vehicle>
+    <vehicle id="ambulance_top1C1.0" type="ambulance" depart="1826.00">
+        <route edges="top1C1 C1C0 C0top0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom2A2.5" type="ambulance" depart="1860.00">
+        <route edges="bottom2A2 A2right0"/>
+    </vehicle>
+    <vehicle id="ambulance_left2C0.1" type="ambulance" depart="1904.00">
+        <route edges="left2C0 C0C1 C1C2 C2right2"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.6" type="ambulance" depart="1954.00">
+        <route edges="bottom0A0 A0B0 B0C0 C0top0"/>
+    </vehicle>
+    <vehicle id="ambulance_top2C2.1" type="ambulance" depart="1985.00">
+        <route edges="top2C2 C2B2 B2A2 A2bottom2"/>
+    </vehicle>
+    <vehicle id="ambulance_right1B2.1" type="ambulance" depart="1997.00">
+        <route edges="right1B2 B2B1 B1B0 B0A0 A0A1 A1bottom1"/>
+    </vehicle>
+    <vehicle id="ambulance_left2C0.2" type="ambulance" depart="2052.00">
+        <route edges="left2C0 C0C1 C1C2 C2right2"/>
+    </vehicle>
+    <vehicle id="ambulance_top0C0.2" type="ambulance" depart="2060.00">
+        <route edges="top0C0 C0B0 B0A0 A0bottom0"/>
+    </vehicle>
+    <vehicle id="ambulance_left1B0.0" type="ambulance" depart="2144.00">
+        <route edges="left1B0 B0A0 A0left0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom2A2.6" type="ambulance" depart="2163.00">
+        <route edges="bottom2A2 A2A1 A1B1 B1B2 B2right1"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom2A2.7" type="ambulance" depart="2222.00">
+        <route edges="bottom2A2 A2B2 B2C2 C2top2"/>
+    </vehicle>
+    <vehicle id="ambulance_right0A2.1" type="ambulance" depart="2239.00">
+        <route edges="right0A2 A2A1 A1A0 A0left0"/>
+    </vehicle>
+    <vehicle id="ambulance_top1C1.1" type="ambulance" depart="2249.00">
+        <route edges="top1C1 C1B1 B1B2 B2right1"/>
+    </vehicle>
+    <vehicle id="ambulance_top1C1.2" type="ambulance" depart="2268.00">
+        <route edges="top1C1 C1B1 B1A1 A1bottom1"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.7" type="ambulance" depart="2304.00">
+        <route edges="bottom0A0 A0B0 B0C0 C0left2"/>
+    </vehicle>
+    <vehicle id="ambulance_left0A0.3" type="ambulance" depart="2506.00">
+        <route edges="left0A0 A0B0 B0C0 C0top0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom1A1.2" type="ambulance" depart="2566.00">
+        <route edges="bottom1A1 A1A0 A0left0"/>
+    </vehicle>
+    <vehicle id="ambulance_left2C0.3" type="ambulance" depart="2724.00">
+        <route edges="left2C0 C0C1 C1C2 C2top2"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom2A2.8" type="ambulance" depart="2750.00">
+        <route edges="bottom2A2 A2B2 B2C2 C2right2"/>
+    </vehicle>
+    <vehicle id="ambulance_top1C1.3" type="ambulance" depart="2778.00">
+        <route edges="top1C1 C1B1 B1B0 B0left1"/>
+    </vehicle>
+    <vehicle id="ambulance_top2C2.2" type="ambulance" depart="2829.00">
+        <route edges="top2C2 C2right2"/>
+    </vehicle>
+    <vehicle id="ambulance_right2C2.2" type="ambulance" depart="2830.00">
+        <route edges="right2C2 C2C1 C1C0 C0left2"/>
+    </vehicle>
+    <vehicle id="ambulance_top0C0.3" type="ambulance" depart="2863.00">
+        <route edges="top0C0 C0C1 C1C2 C2right2"/>
+    </vehicle>
+    <vehicle id="ambulance_left1B0.1" type="ambulance" depart="2919.00">
+        <route edges="left1B0 B0B1 B1B2 B2right1"/>
+    </vehicle>
+    <vehicle id="ambulance_left0A0.4" type="ambulance" depart="2980.00">
+        <route edges="left0A0 A0A1 A1A2 A2right0"/>
+    </vehicle>
+    <vehicle id="ambulance_left1B0.2" type="ambulance" depart="2985.00">
+        <route edges="left1B0 B0B1 B1B2 B2right1"/>
+    </vehicle>
+    <vehicle id="ambulance_right2C2.3" type="ambulance" depart="3016.00">
+        <route edges="right2C2 C2C1 C1B1 B1B0 B0left1"/>
+    </vehicle>
+    <vehicle id="ambulance_left0A0.5" type="ambulance" depart="3099.00">
+        <route edges="left0A0 A0bottom0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.8" type="ambulance" depart="3150.00">
+        <route edges="bottom0A0 A0B0 B0left1"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.9" type="ambulance" depart="3162.00">
+        <route edges="bottom0A0 A0bottom0"/>
+    </vehicle>
+    <vehicle id="ambulance_left1B0.3" type="ambulance" depart="3201.00">
+        <route edges="left1B0 B0A0 A0bottom0"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.10" type="ambulance" depart="3212.00">
+        <route edges="bottom0A0 A0B0 B0B1 B1B0 B0left1"/>
+    </vehicle>
+    <vehicle id="ambulance_right0A2.2" type="ambulance" depart="3238.00">
+        <route edges="right0A2 A2bottom2"/>
+    </vehicle>
+    <vehicle id="ambulance_top2C2.3" type="ambulance" depart="3435.00">
+        <route edges="top2C2 C2B2 B2A2 A2bottom2"/>
+    </vehicle>
+    <vehicle id="ambulance_left0A0.6" type="ambulance" depart="3456.00">
+        <route edges="left0A0 A0B0 B0C0 C0top0"/>
+    </vehicle>
+    <vehicle id="ambulance_left2C0.4" type="ambulance" depart="3536.00">
+        <route edges="left2C0 C0C1 C1C2 C2top2"/>
+    </vehicle>
+    <vehicle id="ambulance_bottom0A0.11" type="ambulance" depart="3580.00">
+        <route edges="bottom0A0 A0B0 B0left1"/>
+    </vehicle>
+</routes>

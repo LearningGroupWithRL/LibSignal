@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="sedan" vClass="passenger" length="4.5" width="1.8" height="1.5" accel="2.6" decel="4.5" sigma="0.5" speedFactor="1.0" speedDev="0.1" color="0.8,0.8,0.8" />
+    <flow id="sedan_bottom0A0" type="sedan" from="bottom0A0" begin="0" end="3600" probability="0.0661" />
+    <flow id="sedan_bottom1A1" type="sedan" from="bottom1A1" begin="0" end="3600" probability="0.0612" />
+    <flow id="sedan_bottom2A2" type="sedan" from="bottom2A2" begin="0" end="3600" probability="0.0632" />
+    <flow id="sedan_bottom3A3" type="sedan" from="bottom3A3" begin="0" end="3600" probability="0.0628" />
+    <flow id="sedan_left0A0" type="sedan" from="left0A0" begin="0" end="3600" probability="0.0669" />
+    <flow id="sedan_left1B0" type="sedan" from="left1B0" begin="0" end="3600" probability="0.0664" />
+    <flow id="sedan_left2C0" type="sedan" from="left2C0" begin="0" end="3600" probability="0.0681" />
+    <flow id="sedan_left3D0" type="sedan" from="left3D0" begin="0" end="3600" probability="0.0617" />
+    <flow id="sedan_right0A3" type="sedan" from="right0A3" begin="0" end="3600" probability="0.0644" />
+    <flow id="sedan_right1B3" type="sedan" from="right1B3" begin="0" end="3600" probability="0.0612" />
+    <flow id="sedan_right2C3" type="sedan" from="right2C3" begin="0" end="3600" probability="0.0627" />
+    <flow id="sedan_right3D3" type="sedan" from="right3D3" begin="0" end="3600" probability="0.065" />
+    <flow id="sedan_top0D0" type="sedan" from="top0D0" begin="0" end="3600" probability="0.0612" />
+    <flow id="sedan_top1D1" type="sedan" from="top1D1" begin="0" end="3600" probability="0.0626" />
+    <flow id="sedan_top2D2" type="sedan" from="top2D2" begin="0" end="3600" probability="0.0662" />
+    <flow id="sedan_top3D3" type="sedan" from="top3D3" begin="0" end="3600" probability="0.0654" />
+</routes>
